@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analysis and Classification of Blood Cancer using Protein Sequences</title>
+</head>
+<body>
+
+    <h1>Analysis and Classification of Blood Cancer using Protein Sequences</h1>
+    <p><strong>Authors:</strong> Guda Mahitha, Nanapu Sai Sreeram, Shaik Md Abdul Aziz, Bijjam Adarsh Reddy, Niharika Vendidandi</p>
+    <p><strong>School of Computer Science Engineering & Information Science, Presidency University, Bengaluru, India</strong></p>
+
+    <h2>Abstract</h2>
+    <p>This research employed bioinformatics tools, specifically leveraging the resources of the NCBI database and BioPython, for the extraction and analysis of genomic data related to blood cancer. Through the identification of prevalent k-mers and the quantification of total mismatches, a specific k-mer sequence was pinpointed, demonstrating a significant association with cancer development. Machine learning methodologies were used to forecast the likelihood of blood cancer occurrence.</p>
+
+    <h2>Introduction</h2>
+    <p>Cancer is a complex disorder characterized by uncontrolled cell proliferation. Blood cancer (hematologic malignancies) is one of the major threats to human health. Early and accurate identification is essential for effective treatment.</p>
+
+    <h2>Methodology</h2>
+    <p>K-mer analysis with BioPython was used to identify cancer-associated sequences. Machine learning models such as SVM and Random Forest were applied to classify the likelihood of cancer based on genomic data.</p>
+
+    <h2>Results</h2>
+    <p>The most accurate machine learning model was Logistic Regression with an accuracy of 97%. SVM followed with 94.1%, while Naive Bayes achieved 91.2%.</p>
+
+    <h2>Conclusion</h2>
+    <p>This study successfully identified k-mers associated with blood cancer and used machine learning for prediction, demonstrating the potential for early diagnosis and improved patient outcomes.</p>
+
+    <h2>References</h2>
+    <ul>
+        <li>Sathirapongsasuti et al. (2018) "Machine learning models for predicting prognosis in blood cancers"</li>
+        <li>Kim et al. (2019) "Predicting risk of leukemia and lymphoma recurrence using machine learning"</li>
+       
+    </ul>
+
+    <footer>
+        <p>Last updated: <span id="lastModified"></span></p>
+    </footer>
+
+    <script>
+        document.getElementById('lastModified').textContent = document.lastModified;
+    </script>
+    
+</body>
+</html>
