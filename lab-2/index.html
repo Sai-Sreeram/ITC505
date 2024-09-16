@@ -7,34 +7,59 @@
 </head>
 <body>
 
-    <h1>Analysis and Classification of Blood Cancer using Protein Sequences</h1>
-    <p><strong>Authors:</strong> Guda Mahitha, Nanapu Sai Sreeram, Shaik Md Abdul Aziz, Bijjam Adarsh Reddy, Niharika Vendidandi</p>
-    <p><strong>School of Computer Science Engineering & Information Science, Presidency University, Bengaluru, India</strong></p>
+    <header>
+        <h1>Analysis and Classification of Blood Cancer using Protein Sequences</h1>
+        <p><strong>Authors:</strong> Guda Mahitha, Nanapu Sai Sreeram, Shaik Md Abdul Aziz, Bijjam Adarsh Reddy, Niharika Vendidandi</p>
+        <p><strong>School of Computer Science Engineering & Information Science, Presidency University, Bengaluru, India</strong></p>
+    </header>
 
-    <h2>Abstract</h2>
-    <p>This research employed bioinformatics tools, specifically leveraging the resources of the NCBI database and BioPython, for the extraction and analysis of genomic data related to blood cancer. Through the identification of prevalent k-mers and the quantification of total mismatches, a specific k-mer sequence was pinpointed, demonstrating a significant association with cancer development. Machine learning methodologies were used to forecast the likelihood of blood cancer occurrence.</p>
+    <main>
+        <section>
+            <h2>Abstract</h2>
+            <p>This research employed bioinformatics tools, specifically leveraging the resources of the NCBI database and BioPython, for the extraction and analysis of genomic data related to blood cancer. Through the identification of prevalent k-mers and the quantification of total mismatches, a specific k-mer sequence was pinpointed, demonstrating a significant association with cancer development. Machine learning methodologies were used to forecast the likelihood of blood cancer occurrence.</p>
+        </section>
 
-    <h2>Introduction</h2>
-    <p>Cancer is a complex disorder characterized by uncontrolled cell proliferation. Blood cancer (hematologic malignancies) is one of the major threats to human health. Early and accurate identification is essential for effective treatment.</p>
+        <section>
+            <h2>Introduction</h2>
+            <p>Cancer is a complex disorder characterized by uncontrolled cell proliferation. Blood cancer (hematologic malignancies) is one of the major threats to human health. Early and accurate identification is essential for effective treatment.</p>
+        </section>
 
-    <h2>Methodology</h2>
-    <p>K-mer analysis with BioPython was used to identify cancer-associated sequences. Machine learning models such as SVM and Random Forest were applied to classify the likelihood of cancer based on genomic data.</p>
+        <section>
+            <h2>Methodology</h2>
+            <p>K-mer analysis with BioPython was used to identify cancer-associated sequences. Machine learning models such as SVM and Random Forest were applied to classify the likelihood of cancer based on genomic data.</p>
+        </section>
 
-    <h2>Results</h2>
-    <p>The most accurate machine learning model was Logistic Regression with an accuracy of 97%. SVM followed with 94.1%, while Naive Bayes achieved 91.2%.</p>
+        <section>
+            <h2>Results</h2>
+            <p>The most accurate machine learning model was Logistic Regression with an accuracy of 97%. SVM followed with 94.1%, while Naive Bayes achieved 91.2%.</p>
+        </section>
 
-    <h2>Conclusion</h2>
-    <p>This study successfully identified k-mers associated with blood cancer and used machine learning for prediction, demonstrating the potential for early diagnosis and improved patient outcomes.</p>
+        <section>
+            <h2>Conclusion</h2>
+            <p>This study successfully identified k-mers associated with blood cancer and used machine learning for prediction, demonstrating the potential for early diagnosis and improved patient outcomes.</p>
+        </section>
 
-    <h2>References</h2>
-    <ul>
-        <li>Sathirapongsasuti et al. (2018) "Machine learning models for predicting prognosis in blood cancers"</li>
-        <li>Kim et al. (2019) "Predicting risk of leukemia and lymphoma recurrence using machine learning"</li>
-       
-    </ul>
+        <section>
+            <h2>References</h2>
+            <ul>
+                <li>Sathirapongsasuti et al. (2018) "Machine learning models for predicting prognosis in blood cancers"</li>
+                <li>Kim et al. (2019) "Predicting risk of leukemia and lymphoma recurrence using machine learning"</li>
+            </ul>
+        </section>
+    </main>
+
+    <article>
+        <header>
+            <h2>Explanation of Structural Choices</h2>
+        </header>
+        <p>
+            In building this webpage, I utilized modern HTML5 elements like <code>&lt;header&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;section&gt;</code>, and <code>&lt;footer&gt;</code> to ensure a clear and logical structure that improves both accessibility and search engine optimization (SEO). The use of semantic tags enhances readability for both users and search engines by defining the roles of different parts of the document. I included the <code>&lt;time&gt;</code> tag for the "Last updated" field to ensure dynamic metadata, which keeps the content up-to-date without manual intervention. Accessibility is further improved by the use of the <code>lang</code> attribute and well-organized heading levels. By separating content, style, and behavior, I adhered to best practices, ensuring that the webpage is user-friendly, maintainable, and future-proof.
+        </p>
+    </article>
+    
 
     <footer>
-        <p>Last updated: <span id="lastModified"></span></p>
+        <p>Last updated: <time id="lastModified"></time></p>
     </footer>
 
     <script>
