@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Font Delivery via @font-face</title>
+    <style>
+        @font-face {
+            font-family: 'CrazyFont';
+            src: url('Action_Man-webfont.woff') format('woff');
+        }
+        
+        body {
+            font-family: 'CrazyFont', sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header, footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1rem;
+        }
+
+        main {
+            padding: 2rem;
+        }
+
+        article {
+            margin-bottom: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Font Delivery via @font-face</h1>
+    </header>
+
+    <main>
+        <article>
+            <header>
+                <h2>How to Serve Fonts to a Browser</h2>
+            </header>
+            <section>
+                <p>This example shows how to utilize the @font-face rule in CSS to provide a custom font. The font file is stored on the server and sent to the user’s browser during page load. If the font isn’t already on the user’s device, it will be downloaded and applied to the text.</p>
+            </section>
+        </article>
+        
+        <article>
+            <header>
+                <h2>Steps to Serve a Custom Font</h2>
+            </header>
+            <section>
+                <ol>
+                    <li>Upload the font file (e.g., .woff or .woff2) to your server.</li>
+                    <li>Use the @font-face rule in your CSS to define the font.</li>
+                    <li>Apply the custom font to specific HTML elements using CSS.</li>
+                </ol>
+            </section>
+        </article>
+    </main>
+
+    <footer>
+        <p>Last updated: 
+            <span id="lastModified"></span>
+        </p>
+    </footer>
+
+    <script type="text/javascript">
+        var x = document.lastModified;
+        document.getElementById('lastModified').textContent = x;
+    </script>
+</body>
+</html>
