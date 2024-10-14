@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analysis and Classification of Blood Cancer using Protein Sequences</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header>
+        <h1>Analysis and Classification of Blood Cancer using Protein Sequences</h1>
+        <p><strong>Authors:</strong> Guda Mahitha, Nanapu Sai Sreeram, Shaik Md Abdul Aziz, Bijjam Adarsh Reddy, Niharika Vendidandi</p>
+        <p><strong>School of Computer Science Engineering & Information Science, Presidency University, Bengaluru, India</strong></p>
+    </header>
+
+    <article>
+        <header>
+            <h2>Abstract</h2>
+        </header>
+        <p>This research employed bioinformatics tools, specifically leveraging the resources of the NCBI database and BioPython, for the extraction and analysis of genomic data related to blood cancer. Through the identification of prevalent k-mers and the quantification of total mismatches, a specific k-mer sequence was pinpointed, demonstrating a significant association with cancer development. Machine learning methodologies were used to forecast the likelihood of blood cancer occurrence.</p>
+        
+        <section>
+            <h2>Introduction</h2>
+            <p>Cancer is a complex disorder characterized by uncontrolled cell proliferation. Blood cancer (hematologic malignancies) is one of the major threats to human health. Early and accurate identification is essential for effective treatment.</p>
+        </section>
+
+        <section>
+            <h2>Methodology</h2>
+            <p>K-mer analysis with BioPython was used to identify cancer-associated sequences. Machine learning models such as SVM and Random Forest were applied to classify the likelihood of cancer based on genomic data.</p>
+        </section>
+
+        <section>
+            <h2>Results</h2>
+            <p>The most accurate machine learning model was Logistic Regression with an accuracy of 97%. SVM followed with 94.1%, while Naive Bayes achieved 91.2%.</p>
+        </section>
+
+        <section>
+            <h2>Conclusion</h2>
+            <p>This study successfully identified k-mers associated with blood cancer and used machine learning for prediction, demonstrating the potential for early diagnosis and improved patient outcomes.</p>
+        </section>
+
+        <section>
+            <h2>References</h2>
+            <ul>
+                <li>Sathirapongsasuti et al. (2018) "Machine learning models for predicting prognosis in blood cancers"</li>
+                <li>Kim et al. (2019) "Predicting risk of leukemia and lymphoma recurrence using machine learning"</li>
+            </ul>
+        </section>
+    </article>
+
+    <article>
+        <header>
+            <h2>Stylistic Choices Addendum</h2>
+        </header>
+        <section>
+            <h3>Font Choices</h3>
+            <p>I chose a clean, modern sans-serif font like 'Arial' for its readability and professional look. The font aligns with the academic nature of the research, providing clarity and simplicity for the text-heavy content.</p>
+        </section>
+
+        <section>
+            <h3>Heading and Text Sizes</h3>
+            <p>The <code>&lt;h1&gt;</code> heading size is set at 36px to stand out as the main title. <code>&lt;h2&gt;</code> headings are slightly smaller at 28px, while <code>&lt;p&gt;</code> text is sized at 16px for comfortable reading. The proportional scaling ensures clear visual hierarchy.</p>
+        </section>
+
+        <section>
+            <h3>Color Choices</h3>
+            <p>I used a white background (#ffffff) for contrast against black text (#000000), ensuring high readability. For headings, I applied a dark blue (#002147), which complements the professional tone of the paper while maintaining accessibility.</p>
+        </section>
+
+        <section>
+            <h3>Margins and Padding</h3>
+            <p>The document as a whole includes generous padding (20px) and margins (30px) around the body for a clean, spacious layout. Individual sections and headings have padding to create distinct separation without overwhelming the reader.</p>
+        </section>
+
+        <section>
+            <h3>HTML Abuse</h3>
+            <p>Initially, I incorrectly used an <code>&lt;h2&gt;</code> tag for the essay title because of how it looked, but that was incorrect. I have since replaced it with the appropriate <code>&lt;h1&gt;</code> tag to reflect the proper document structure.</p>
+        </section>
+    </article>
+
+    <footer>
+        <p>Last updated: <time id="lastModified"></time></p>
+    </footer>
+
+    <script>
+        document.getElementById('lastModified').textContent = document.lastModified;
+    </script>
+
+</body>
+</html>
