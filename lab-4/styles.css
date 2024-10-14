@@ -1,31 +1,36 @@
 body {
-    font-family: Arial, sans-serif;
-    background-color: #ffffff;
-    color: #000000;
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(to bottom, #f5f5f5, #ffffff);
+    color: #333333;
     padding: 20px;
-    margin: 30px;
+    margin: 40px auto;
+    max-width: 1200px;
 }
 
 header h1 {
-    font-size: 36px;
-    color: #002147;
-    margin-bottom: 10px;
+    font-size: 40px;
+    color: #1a237e;
+    margin-bottom: 20px;
+    text-align: center;
 }
 
 header p {
     font-size: 14px;
     margin-bottom: 5px;
+    text-align: center;
+    color: #555555;
 }
 
 article h2 {
-    font-size: 28px;
-    color: #002147;
-    margin-top: 20px;
+    font-size: 30px;
+    color: #1a237e;
+    margin-top: 30px;
 }
 
 article p, article li {
-    font-size: 16px;
+    font-size: 18px;
     line-height: 1.6;
+    color: #333333;
 }
 
 ul {
@@ -35,5 +40,15 @@ ul {
 footer {
     text-align: center;
     margin-top: 30px;
-    font-size: 12px;
+    font-size: 14px;
+    color: #555555;
+}
+
+section {
+    margin-bottom: 20px;
+}
+
+/* Style for last modified date */
+#lastModified {
+    font-weight: bold;
 }
