@@ -1,0 +1,39 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ffffff;
+    color: #000000;
+    padding: 20px;
+    margin: 30px;
+}
+
+header h1 {
+    font-size: 36px;
+    color: #002147;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+article h2 {
+    font-size: 28px;
+    color: #002147;
+    margin-top: 20px;
+}
+
+article p, article li {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+ul {
+    padding-left: 20px;
+}
+
+footer {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 12px;
+}
