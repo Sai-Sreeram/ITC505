@@ -1,4 +1,4 @@
-// Debugging to confirm JavaScript file is loaded
+// Confirm JavaScript is loaded
 console.log("JavaScript loaded");
 
 // Story Data
@@ -57,9 +57,11 @@ const updatePage = (stageKey) => {
     
     // Handle special cases for mini-games
     if (stageKey === "decryptPuzzle") {
+        console.log("Triggering decryptPuzzle mini-game");
         decryptPuzzle();
         return;
     } else if (stageKey === "dataAnalysis") {
+        console.log("Triggering dataAnalysis mini-game");
         dataAnalysis();
         return;
     }
@@ -110,7 +112,7 @@ const startBackgroundMusic = () => {
 
 // Mini-game: Simple decryption challenge
 const decryptPuzzle = () => {
-    console.log("Decrypting puzzle");
+    console.log("decryptPuzzle mini-game started");
     const attempt = prompt("Enter decryption key (Hint: 1337):");
     if (attempt === "1337") {
         alert("Decryption successful! You found a lead.");
@@ -122,7 +124,7 @@ const decryptPuzzle = () => {
 
 // Mini-game: Data analysis challenge
 const dataAnalysis = () => {
-    console.log("Analyzing data");
+    console.log("dataAnalysis mini-game started");
     const data = prompt("Analyze data pattern (Enter 1234 for success):");
     if (data === "1234") {
         alert("Analysis successful! This data points to the AI’s possible location.");
