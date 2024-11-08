@@ -139,10 +139,10 @@ const toggleMusic = () => {
     console.log("Toggling music");
     if (backgroundMusic.paused) {
         backgroundMusic.play();
-        document.getElementById("toggleMusic").textContent = "🔊 Music On";
+        document.getElementById("toggleMusic").textContent = "🔇 Music Off";
     } else {
         backgroundMusic.pause();
-        document.getElementById("toggleMusic").textContent = "🔇 Music Off";
+        document.getElementById("toggleMusic").textContent = "🔊 Music On";
     }
 };
 
@@ -157,7 +157,7 @@ const exploreArea = (areaKey) => {
 
 // Addendum Modal Functions
 const openAddendum = () => {
-    document.getElementById("addendumModal").style.display = "block";
+    document.getElementById("addendumModal").style.display = "flex";
 };
 const closeAddendum = () => {
     document.getElementById("addendumModal").style.display = "none";
@@ -169,3 +169,6 @@ window.onclick = (event) => {
         modal.style.display = "none";
     }
 };
+
+// Update the last modified date in the footer
+document.getElementById("lastModified").textContent = document.lastModified;
