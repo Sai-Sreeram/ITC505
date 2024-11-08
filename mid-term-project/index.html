@@ -6,14 +6,6 @@
     <title>Cyber Detective: The Mystery of the Missing AI</title>
     <link rel="stylesheet" href="styles.css">
 </head>
-<body><!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cyber Detective: The Mystery of the Missing AI</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
 <body>
     <header>
         <h1>Cyber Detective</h1>
@@ -36,7 +28,6 @@
             </div>
         </section>
 
-        <!-- Flexbox container for buttons -->
         <div id="buttonContainer">
             <button id="toggleMusic">🔊 Toggle Music</button>
             <button id="addendumBtn" onclick="openAddendum()">📜 Addendum</button>
@@ -47,98 +38,6 @@
         <p>Last updated: <span id="lastModified"></span></p>
     </footer>
 
-    <!-- Audio Elements for Sound Effects -->
-    <audio id="backgroundMusic" src="assets/background.mp3" loop preload="auto"></audio>
-    <audio id="clickSound" src="assets/click.mp3" preload="auto"></audio>
-
-    <!-- Addendum Modal -->
-    <div id="addendumModal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeAddendum()">&times;</span>
-            <h2>Addendum</h2>
-            <p><strong>Project Process and Creative Decisions</strong></p>
-            <p><strong>Concept Development:</strong> This project's goal was to design an interactive, story-based game into HTML, CSS, and JavaScript. It was interesting to hear the idea of a "cyber detective" storyline in a futuristic city because creativity could be explored in the design, there would be interactive choices, and the opportunity to add mini-games was there, making the project challenging and exciting at once.</p>
-
-            <p><strong>Planning and Structure:</strong> I planned out the plot structure and various paths and endings before ever writing a line of code. I opted for a "Choose Your Own Adventure" format in which there are various stages leading to choices whose outcome determines the final ending. The stage is created as choice points where every choice led to a new stage or mini-game, and therefore having multiple endings due to the action of the user.</p>
-
-            <p><strong>UI and Aesthetic Choices:</strong> Neon color values and glow effects in teal, pink, and dark background colors were used to immerse the viewers within an aesthetic of cyberpunk. The help of CSS animations animated the buttons, and pulsing activity on the click gave a futuristic feel to the effect. I opted for the aesthetic with the sense of a technologically advanced, digital world that would give the feel of being a cyber detective.</p>
-
-            <p><strong>Interactivity and Game Mechanics:</strong> The game logic was managed with JavaScript. This code dynamically changed the stages and added interactivity to the user interface. The main elements were:</p>
-            <ul>
-                <li><strong>Dynamic Story Stages:</strong> Each stage was represented by an object with text, choices, and consequences. This approach was highly flexible, allowing for easy expansion or modification of the storyline.</li>
-                <li><strong>Mini-games:</strong> Simple puzzle challenges were included to add depth to the game. For example, the decryption mini-game required the user to input a code to continue, simulating an investigative process.</li>
-                <li><strong>Audio Elements:</strong> Background music and sound effects were added to enhance immersion. A toggle allowed users to control the audio to suit their preferences.</li>
-            </ul>
-
-            <p><strong>Responsiveness:</strong> I ensured that the game was fully responsive, working smoothly across devices. CSS Grid and media queries were used to adjust the layout, ensuring that buttons and content displayed properly on both small and large screens.</p>
-
-            <p><strong>Addendum Modal:</strong> To fulfill the project requirements and provide a space for reflection, I added an "Addendum" button that opens a modal. This feature allowed me to explore modal windows and enhance the user interface by providing insights and challenges faced during the project.</p>
-
-            <p><strong>Challenges and Solutions</strong></p>
-
-            <p><strong>Story Stages Management</strong></p>
-            <p><strong>Challenge:</strong> Initially, linking multi-stage stories was complex, as each choice had to lead to another stage or mini-game appropriately.</p>
-            <p><strong>Solution:</strong> I organized the stages in a JavaScript object, with clearly defined keys for each stage. This structure kept the code modular and manageable.</p>
-
-            <p><strong>Audio Autoplay Restrictions:</strong></p>
-            <p><strong>Challenge:</strong> Modern browsers block autoplay for audio, which interrupted the immersive experience.</p>
-            <p><strong>Solution:</strong> I added a flag to start music only after the first user interaction, such as clicking a button. This workaround allowed music to play in compliance with browser policies.</p>
-
-            <p><strong>Ensuring Uniform Design:</strong></p>
-            <p><strong>Challenge:</strong> Maintaining consistent colors, font styling, and animations across all elements was essential for a professional look.</p>
-            <p><strong>Solution:</strong> I used CSS variables for primary colors and applied common animations to all buttons. Regular testing across screen sizes ensured consistent design elements.</p>
-
-            <p><strong>Modal Functionality:</strong></p>
-            <p><strong>Challenge:</strong> Making the Addendum modal interactive and ensuring it closed correctly when clicking outside the modal area.</p>
-            <p><strong>Solution:</strong> I added JavaScript to close the modal when clicking outside its content area, improving usability and giving a professional touch to the project.</p>
-
-            <p><strong>Insights and Lessons Learned</strong></p>
-            <p>This project provided a valuable opportunity to combine storytelling, design, and technical skills. It taught me the importance of planning and structuring code, especially when dealing with branching storylines. CSS also played a powerful role in creating visually engaging experiences without overwhelming complexity. This project reinforced the importance of making design choices that are both functional and aligned with the thematic goals of the project. Overall, building this game was a rewarding experience, and I gained confidence in handling JavaScript for interactive applications and using CSS to bring designs to life.</p>
-
-            <p>Good luck in your adventure!</p>
-        </div>
-    </div>
-
-    <script src="script.js"></script>
-    <script>
-        document.getElementById("lastModified").textContent = document.lastModified;
-    </script>
-</body>
-</html>
-
-    <header>
-        <h1>Cyber Detective</h1>
-        <p class="subtitle">The Mystery of the Missing AI</p>
-    </header>
-
-    <main>
-        <section id="storyContainer">
-            <div id="storyText">Your journey begins...</div>
-            <div id="choices" class="choices-grid"></div>
-        </section>
-
-        <section id="cityMap">
-            <h2>City Map</h2>
-            <div id="mapAreas" class="map-grid">
-                <button onclick="exploreArea('surveillanceRoom')">Surveillance Room</button>
-                <button onclick="exploreArea('dataCenter')">Data Center</button>
-                <button onclick="exploreArea('techLab')">Tech Lab</button>
-                <button onclick="exploreArea('aiHub')">AI Hub</button>
-            </div>
-        </section>
-
-        <!-- Flexbox container for buttons -->
-        <div id="buttonContainer">
-            <button id="toggleMusic">🔊 Toggle Music</button>
-            <button id="addendumBtn" onclick="openAddendum()">📜 Addendum</button>
-        </div>
-    </main>
-
-    <footer>
-        <p>Last updated: <span id="lastModified"></span></p>
-    </footer>
-
-    <!-- Audio Elements for Sound Effects -->
     <audio id="backgroundMusic" src="assets/background.mp3" loop preload="auto"></audio>
     <audio id="clickSound" src="assets/click.mp3" preload="auto"></audio>
 
