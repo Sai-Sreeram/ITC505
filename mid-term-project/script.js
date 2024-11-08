@@ -1,176 +1,161 @@
-// Confirm JavaScript is loaded
-console.log("JavaScript loaded");
+/* Root variables for color themes */
+:root {
+    --primary-color: #00ffcc;
+    --secondary-color: #ff00ff;
+    --background-color: #111;
+    --text-color: #e0e0e0;
+    --glow-color: rgba(0, 255, 255, 0.7);
+}
 
-// Story Data
-const story = {
-    start: {
-        text: "You’re assigned to find the missing AI controlling the city. Start by choosing where to investigate.",
-        choices: ["Check Surveillance Room", "Visit Data Center", "Question suspect in Tech Lab", "Explore AI Hub"],
-        consequence: ["surveillanceRoom", "dataCenter", "techLab", "aiHub"],
-    },
-    surveillanceRoom: {
-        text: "You find some unusual activity in the surveillance data logs. It looks encrypted. Try to decrypt it.",
-        choices: ["Decrypt Data", "Leave Room"],
-        consequence: ["decryptPuzzle", "start"],
-    },
-    dataCenter: {
-        text: "The Data Center shows no signs of a forced breach. You find a hidden file named 'AI_Location'.",
-        choices: ["Analyze File", "Return to HQ"],
-        consequence: ["dataAnalysis", "start"],
-    },
-    techLab: {
-        text: "The suspect is nervous and gives you some clues. You need to choose your next step.",
-        choices: ["Return to HQ", "Explore AI Hub"],
-        consequence: ["start", "aiHub"],
-    },
-    aiHub: {
-        text: "You arrive at the AI Hub and find the missing AI!",
-        choices: ["Celebrate", "End Investigation"],
-        consequence: ["celebrate", "end"],
-    },
-    celebrate: {
-        text: "You successfully recovered the missing AI! Mission complete.",
-        choices: [],
-        consequence: [],
-    },
-    end: {
-        text: "The investigation is over. Thank you for playing!",
-        choices: [],
-        consequence: [],
+body {
+    font-family: 'Orbitron', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background: #222;
+    padding: 20px;
+    color: var(--primary-color);
+    box-shadow: 0px 0px 20px var(--primary-color);
+}
+
+.subtitle {
+    color: var(--secondary-color);
+    font-size: 1.2em;
+    text-shadow: 0 0 8px var(--secondary-color), 0 0 12px var(--secondary-color);
+    margin-top: 10px;
+}
+
+#storyContainer {
+    background: rgba(17, 17, 17, 0.9);
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px;
+    box-shadow: 0px 0px 15px var(--glow-color);
+}
+
+#choices {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 10px;
+    margin-top: 20px;
+}
+
+button {
+    padding: 10px 15px;
+    font-size: 16px;
+    color: var(--text-color);
+    background-color: #333;
+    border: 1px solid var(--primary-color);
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0px 0px 8px var(--glow-color);
+}
+
+button:hover {
+    color: var(--secondary-color);
+    background: #444;
+    transform: translateY(-3px);
+    box-shadow: 0 0 15px var(--primary-color), 0 0 25px var(--secondary-color);
+}
+
+#cityMap {
+    background: rgba(34, 34, 34, 0.9);
+    border: 2px solid var(--secondary-color);
+    border-radius: 10px;
+    margin: 20px;
+    padding: 20px;
+    box-shadow: 0px 0px 20px var(--secondary-color);
+}
+
+.map-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    padding: 10px;
+}
+
+#buttonContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+#toggleMusic, #addendumBtn {
+    background-color: #444;
+    color: var(--primary-color);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px var(--primary-color);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#toggleMusic:hover, #addendumBtn:hover {
+    color: var(--secondary-color);
+    background: #333;
+    box-shadow: 0 0 15px var(--primary-color), 0 0 25px var(--secondary-color);
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    background-color: #222;
+    padding: 20px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 600px;
+    max-height: 80vh;
+    overflow-y: auto;
+    box-shadow: 0px 0px 15px var(--primary-color);
+    color: var(--text-color);
+    animation: modalFadeIn 0.5s;
+}
+
+.modal-content h2 {
+    color: var(--primary-color);
+    text-align: center;
+}
+
+.close {
+    color: var(--secondary-color);
+    float: right;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: var(--primary-color);
+}
+
+@keyframes modalFadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@media (max-width: 768px) {
+    .modal-content {
+        width: 90%;
+        margin: 10% auto;
     }
-};
-
-// Initialize Audio Elements
-const backgroundMusic = document.getElementById("backgroundMusic");
-const clickSound = document.getElementById("clickSound");
-let musicPlayed = false; // Flag to track if music has started
-
-// Start the game
-const startGame = () => {
-    console.log("Game started");
-    updatePage("start");
-};
-
-// Function to update the page content based on the story stage
-const updatePage = (stageKey) => {
-    console.log(`Updating page for stage: ${stageKey}`);
-    
-    // Handle special cases for mini-games
-    if (stageKey === "decryptPuzzle") {
-        console.log("Triggering decryptPuzzle mini-game");
-        decryptPuzzle();
-        return;
-    } else if (stageKey === "dataAnalysis") {
-        console.log("Triggering dataAnalysis mini-game");
-        dataAnalysis();
-        return;
-    }
-    
-    // Get the stage data from the story object
-    const stage = story[stageKey];
-    if (!stage) {
-        console.error(`Stage ${stageKey} not found in story data`);
-        return;
-    }
-    
-    document.getElementById("storyText").innerText = stage.text;
-
-    // Clear previous choices and add new ones
-    const choicesContainer = document.getElementById("choices");
-    choicesContainer.innerHTML = "";
-    stage.choices.forEach((choice, index) => {
-        const button = document.createElement("button");
-        button.innerText = choice;
-
-        // Play click sound and start music on the first interaction
-        button.onclick = () => {
-            playClickSound();
-            if (!musicPlayed) {
-                startBackgroundMusic();
-                musicPlayed = true;
-            }
-            updatePage(stage.consequence[index]);
-        };
-
-        choicesContainer.appendChild(button);
-    });
-};
-
-// Function to play click sound
-const playClickSound = () => {
-    clickSound.currentTime = 0;
-    clickSound.play();
-};
-
-// Function to start background music after the first interaction
-const startBackgroundMusic = () => {
-    backgroundMusic.volume = 0.3;
-    backgroundMusic.play().catch(error => {
-        console.error("Background music failed to play:", error);
-    });
-};
-
-// Mini-game: Simple decryption challenge
-const decryptPuzzle = () => {
-    console.log("decryptPuzzle mini-game started");
-    const attempt = prompt("Enter decryption key (Hint: 1337):");
-    if (attempt === "1337") {
-        alert("Decryption successful! You found a lead.");
-        updatePage("dataCenter"); // Move to next stage
-    } else {
-        alert("Decryption failed. Try again.");
-    }
-};
-
-// Mini-game: Data analysis challenge
-const dataAnalysis = () => {
-    console.log("dataAnalysis mini-game started");
-    const data = prompt("Analyze data pattern (Enter 1234 for success):");
-    if (data === "1234") {
-        alert("Analysis successful! This data points to the AI’s possible location.");
-        updatePage("aiHub");
-    } else {
-        alert("Analysis inconclusive. Try again.");
-    }
-};
-
-// Toggle Background Music
-const toggleMusic = () => {
-    console.log("Toggling music");
-    if (backgroundMusic.paused) {
-        backgroundMusic.play();
-        document.getElementById("toggleMusic").textContent = "🔊 Music On";
-    } else {
-        backgroundMusic.pause();
-        document.getElementById("toggleMusic").textContent = "🔇 Music Off";
-    }
-};
-
-// Attach event listener for music toggle
-document.getElementById("toggleMusic").onclick = toggleMusic;
-
-// City area navigation
-const exploreArea = (areaKey) => {
-    console.log(`Exploring area: ${areaKey}`);
-    updatePage(areaKey);
-};
-
-// Addendum Modal Functions
-const openAddendum = () => {
-    document.getElementById("addendumModal").style.display = "block";
-};
-
-const closeAddendum = () => {
-    document.getElementById("addendumModal").style.display = "none";
-};
-
-// Close modal when clicking outside the content area
-window.onclick = (event) => {
-    const modal = document.getElementById("addendumModal");
-    if (event.target === modal) {
-        modal.style.display = "none";
-    }
-};
-
-// Start game on page load
-document.addEventListener("DOMContentLoaded", startGame);
+}
