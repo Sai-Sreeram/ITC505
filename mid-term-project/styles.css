@@ -19,44 +19,78 @@ body {
     min-height: 100vh;
 }
 
-/* Flexbox container for buttons */
-#buttonContainer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px; /* Spacing between buttons */
-    margin-top: 15px;
+/* Header and Subtitle */
+header {
+    text-align: center;
+    color: var(--primary-color);
+    text-shadow: 0 0 10px var(--primary-color);
 }
 
-/* Toggle Music and Addendum Button Styling */
-#toggleMusic, #addendumBtn {
-    background-color: #444;
+.subtitle {
+    color: var(--secondary-color);
+    text-shadow: 0 0 8px var(--secondary-color);
+    margin-top: 5px;
+}
+
+/* Story and City Map sections */
+#storyContainer, #cityMap {
+    background-color: rgba(34, 34, 34, 0.9);
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px var(--glow-color);
+    padding: 20px;
+    margin: 20px;
+    max-width: 700px;
+    width: 90%;
+}
+
+#cityMap h2 {
+    margin-bottom: 15px;
     color: var(--primary-color);
-    border: none;
+}
+
+/* Choices and Map Grid Styling */
+.choices-grid, .map-grid {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+button {
+    background-color: #333;
+    color: var(--primary-color);
     padding: 10px 20px;
+    border: 1px solid var(--primary-color);
     border-radius: 5px;
-    box-shadow: 0px 0px 10px var(--primary-color);
     cursor: pointer;
     transition: all 0.3s ease;
 }
 
-#toggleMusic:hover, #addendumBtn:hover {
-    color: var(--secondary-color);
-    background: #333;
-    box-shadow: 0 0 15px var(--primary-color), 0 0 25px var(--secondary-color);
+button:hover {
+    background-color: var(--secondary-color);
+    color: #fff;
+    box-shadow: 0 0 10px var(--secondary-color);
+}
+
+/* Flexbox container for control buttons */
+#buttonContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px; /* Spacing between buttons */
+    margin-top: 20px;
 }
 
 /* Addendum Modal Styles */
 .modal {
-    display: none; /* Hidden by default */
+    display: none;
     position: fixed;
     z-index: 1000;
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.7); /* Black background with opacity */
-    overflow-y: auto; /* Enable scrolling for the modal */
+    background-color: rgba(0, 0, 0, 0.7);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -69,10 +103,9 @@ body {
     width: 90%;
     max-width: 600px;
     max-height: 80vh;
-    overflow-y: auto; /* Make content scrollable within modal */
+    overflow-y: auto;
     box-shadow: 0px 0px 15px var(--primary-color);
     color: var(--text-color);
-    text-align: left;
     animation: modalFadeIn 0.5s;
 }
 
@@ -81,36 +114,18 @@ body {
     text-align: center;
 }
 
-.modal-content p, .modal-content ul {
-    margin-top: 10px;
-}
-
-.modal-content ul {
-    padding-left: 20px;
-}
-
 .close {
     color: var(--secondary-color);
     float: right;
     font-size: 24px;
     cursor: pointer;
-    transition: color 0.3s ease;
 }
 
 .close:hover {
     color: var(--primary-color);
 }
 
-/* Animation for modal fade-in */
 @keyframes modalFadeIn {
     from { opacity: 0; }
     to { opacity: 1; }
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .modal-content {
-        width: 90%;
-        margin: 10% auto;
-    }
 }
