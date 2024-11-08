@@ -155,5 +155,22 @@ const exploreArea = (areaKey) => {
     updatePage(areaKey);
 };
 
+// Addendum Modal Functions
+const openAddendum = () => {
+    document.getElementById("addendumModal").style.display = "block";
+};
+
+const closeAddendum = () => {
+    document.getElementById("addendumModal").style.display = "none";
+};
+
+// Close modal when clicking outside the content area
+window.onclick = (event) => {
+    const modal = document.getElementById("addendumModal");
+    if (event.target === modal) {
+        modal.style.display = "none";
+    }
+};
+
 // Start game on page load
 document.addEventListener("DOMContentLoaded", startGame);
