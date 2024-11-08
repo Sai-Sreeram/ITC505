@@ -19,89 +19,13 @@ body {
     min-height: 100vh;
 }
 
-header {
-    background: #222;
-    width: 100%;
-    padding: 20px 0;
-    color: var(--primary-color);
-    box-shadow: 0px 0px 20px var(--primary-color);
-    text-align: center;
-}
-
-.subtitle {
-    color: var(--secondary-color);
-    font-size: 1.2em;
-    text-shadow: 0 0 8px var(--secondary-color), 0 0 12px var(--secondary-color);
-    margin-top: 5px;
-}
-
-/* Story container styling */
-#storyContainer {
-    background: rgba(17, 17, 17, 0.9);
-    border-radius: 10px;
-    padding: 20px;
-    margin: 20px;
-    box-shadow: 0px 0px 15px var(--glow-color);
-    max-width: 700px;
-    width: 90%;
-    text-align: center;
-}
-
-/* Choices styling */
-#choices {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-    gap: 10px;
-    margin-top: 20px;
-}
-
-button {
-    padding: 10px 15px;
-    font-size: 16px;
-    color: var(--text-color);
-    background-color: #333;
-    border: 1px solid var(--primary-color);
-    border-radius: 5px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: 0px 0px 8px var(--glow-color);
-    animation: pulse 2s infinite;
-}
-
-button:hover {
-    color: var(--secondary-color);
-    background: #444;
-    transform: translateY(-3px);
-    box-shadow: 0 0 15px var(--primary-color), 0 0 25px var(--secondary-color);
-}
-
-button:active {
-    transform: translateY(0);
-    box-shadow: 0 0 10px var(--primary-color), 0 0 20px var(--secondary-color);
-}
-
-/* City map section */
-#cityMap {
-    background: rgba(34, 34, 34, 0.9);
-    border: 2px solid var(--secondary-color);
-    border-radius: 10px;
-    margin: 20px;
-    padding: 20px;
-    box-shadow: 0px 0px 20px var(--secondary-color);
-    max-width: 700px;
-    width: 90%;
-    text-align: center;
-}
-
-#cityMap h2 {
-    margin-bottom: 15px;
-}
-
-.map-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-    gap: 15px;
-    padding: 10px;
+/* Flexbox container for buttons */
+#buttonContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px; /* Adjust this value to control the spacing */
+    margin-top: 15px;
 }
 
 /* Toggle Music and Addendum Button Styling */
@@ -110,7 +34,6 @@ button:active {
     color: var(--primary-color);
     border: none;
     padding: 10px 20px;
-    margin-top: 15px;
     border-radius: 5px;
     box-shadow: 0px 0px 10px var(--primary-color);
     cursor: pointer;
@@ -123,7 +46,7 @@ button:active {
     box-shadow: 0 0 15px var(--primary-color), 0 0 25px var(--secondary-color);
 }
 
-/* Modal styling */
+/* Addendum Modal Styles */
 .modal {
     display: none; /* Hidden by default */
     position: fixed;
@@ -133,27 +56,35 @@ button:active {
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.7); /* Black background with opacity */
+    overflow-y: auto; /* Enable scrolling for the modal */
 }
 
 .modal-content {
     background-color: #222;
-    margin: 15% auto;
+    margin: 5% auto;
     padding: 20px;
     border-radius: 10px;
-    width: 80%;
+    width: 90%;
     max-width: 600px;
+    max-height: 80vh;
+    overflow-y: auto; /* Make content scrollable within modal */
     box-shadow: 0px 0px 15px var(--primary-color);
     color: var(--text-color);
-    text-align: center;
+    text-align: left;
     animation: modalFadeIn 0.5s;
 }
 
 .modal-content h2 {
     color: var(--primary-color);
+    text-align: center;
 }
 
-.modal-content p {
-    margin-top: 15px;
+.modal-content p, .modal-content ul {
+    margin-top: 10px;
+}
+
+.modal-content ul {
+    padding-left: 20px;
 }
 
 .close {
@@ -168,24 +99,7 @@ button:active {
     color: var(--primary-color);
 }
 
-/* Footer styling */
-footer {
-    color: var(--text-color);
-    font-size: 0.9em;
-    padding: 15px;
-    text-align: center;
-}
-
-/* Animations */
-@keyframes pulse {
-    0%, 100% {
-        box-shadow: 0 0 8px var(--glow-color), 0 0 10px var(--primary-color);
-    }
-    50% {
-        box-shadow: 0 0 15px var(--glow-color), 0 0 20px var(--primary-color);
-    }
-}
-
+/* Animation for modal fade-in */
 @keyframes modalFadeIn {
     from { opacity: 0; }
     to { opacity: 1; }
@@ -193,20 +107,8 @@ footer {
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    header {
-        padding: 15px 0;
-    }
-
-    #storyContainer, #cityMap {
-        padding: 15px;
-        margin: 15px;
-    }
-
-    button {
-        font-size: 14px;
-    }
-
-    #toggleMusic, #addendumBtn {
-        padding: 8px 15px;
+    .modal-content {
+        width: 90%;
+        margin: 10% auto;
     }
 }
