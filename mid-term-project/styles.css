@@ -133,22 +133,36 @@ button:hover {
     animation: modalFadeIn 0.5s;
 }
 
+/* Center the main heading and give it more prominence */
 .modal-content h2 {
     color: var(--primary-color);
     text-align: center;
+    font-size: 1.8em;
     margin-bottom: 15px;
+    text-transform: uppercase;
 }
 
+/* Add style for subheadings */
+.modal-content h3 {
+    color: var(--secondary-color);
+    font-size: 1.4em;
+    margin-top: 20px;
+    text-align: center;
+}
+
+/* Ensure paragraphs and lists are justified for readability */
 .modal-content p, .modal-content ul {
     margin-top: 10px;
     text-align: justify;
     line-height: 1.6;
 }
 
+/* Indent lists slightly for readability */
 .modal-content ul {
     padding-left: 20px;
 }
 
+/* Ensure close button styling and positioning */
 .close {
     color: var(--secondary-color);
     float: right;
@@ -167,6 +181,7 @@ button:hover {
     to { opacity: 1; }
 }
 
+/* Responsive Design */
 @media (max-width: 768px) {
     .modal-content {
         width: 90%;
