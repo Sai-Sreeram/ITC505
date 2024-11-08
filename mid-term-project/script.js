@@ -43,18 +43,26 @@ const story = {
 // Initialize Audio Elements
 const backgroundMusic = document.getElementById("backgroundMusic");
 const clickSound = document.getElementById("clickSound");
+let musicPlayed = false; // Flag to track if music has started
 
 // Start the game
 const startGame = () => {
     console.log("Game started");
-    backgroundMusic.volume = 0.3;
-    backgroundMusic.play();
     updatePage("start");
 };
 
 // Function to update the page content based on the story stage
 const updatePage = (stageKey) => {
     console.log(`Updating page for stage: ${stageKey}`);
+    
+    if (stageKey === "decryptPuzzle") {
+        decryptPuzzle();
+        return;
+    } else if (stageKey === "dataAnalysis") {
+        dataAnalysis();
+        return;
+    }
+    
     const stage = story[stageKey];
     if (!stage) {
         console.error(`Stage ${stageKey} not found in story data`);
@@ -70,9 +78,13 @@ const updatePage = (stageKey) => {
         const button = document.createElement("button");
         button.innerText = choice;
 
-        // Play click sound when a choice is made
+        // Play click sound and start music on the first interaction
         button.onclick = () => {
             playClickSound();
+            if (!musicPlayed) {
+                startBackgroundMusic();
+                musicPlayed = true;
+            }
             updatePage(stage.consequence[index]);
         };
 
@@ -84,6 +96,14 @@ const updatePage = (stageKey) => {
 const playClickSound = () => {
     clickSound.currentTime = 0;
     clickSound.play();
+};
+
+// Function to start background music after the first interaction
+const startBackgroundMusic = () => {
+    backgroundMusic.volume = 0.3;
+    backgroundMusic.play().catch(error => {
+        console.error("Background music failed to play:", error);
+    });
 };
 
 // Mini-game: Simple decryption challenge
