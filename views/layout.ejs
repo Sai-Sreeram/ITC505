@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Application Tracker</title>
+    <link rel="stylesheet" href="/ITC505/lab-6/css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            Job Tracker
+            <p>Track your job applications and stay on top of deadlines!</p>
+        </header>
+        <nav class="sidebar-left">
+            <ul>
+                <li><a href="/ITC505/lab-6/index.html">All Applications</a></li>
+                <li><a href="/ITC505/lab-6/add-job">Add Job Application</a></li>
+            </ul>
+        </nav>
+        <main><%- body %></main>
+        <footer>
+            <p>Last Updated: <span id="lastModified"></span></p>
+        </footer>
+        <script>
+            document.getElementById('lastModified').textContent = document.lastModified;
+        </script>
+    </div>
+</body>
+</html>

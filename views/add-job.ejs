@@ -1,0 +1,20 @@
+<%- include('layout') %>
+<section>
+    <h2>Add Job Application</h2>
+    <form action="/ITC505/lab-6/add-job" method="POST">
+        <label for="company">Company:</label>
+        <input type="text" id="company" name="company" required>
+        <label for="position">Position:</label>
+        <input type="text" id="position" name="position" required>
+        <label for="date">Application Date:</label>
+        <input type="date" id="date" name="date" required>
+        <label for="status">Status:</label>
+        <select id="status" name="status">
+            <option value="applied">Applied</option>
+            <option value="interviewing">Interviewing</option>
+            <option value="offered">Offered</option>
+            <option value="rejected">Rejected</option>
+        </select>
+        <button type="submit">Add Application</button>
+    </form>
+</section>

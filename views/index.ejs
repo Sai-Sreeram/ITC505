@@ -1,0 +1,17 @@
+<%- include('layout') %>
+<section>
+    <h2>Your Job Applications</h2>
+    <% if (jobApplications.length === 0) { %>
+        <p>No applications found.</p>
+    <% } else { %>
+        <div class="application-list">
+            <% jobApplications.forEach((app, index) => { %>
+                <div class="application-card">
+                    <h3><%= app.position %> at <%= app.company %></h3>
+                    <p><strong>Date:</strong> <%= app.date %></p>
+                    <p><strong>Status:</strong> <%= app.status %></p>
+                </div>
+            <% }); %>
+        </div>
+    <% } %>
+</section>
