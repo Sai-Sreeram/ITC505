@@ -24,7 +24,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 20px; /* Adjust this value to control the spacing */
+    gap: 20px; /* Spacing between buttons */
     margin-top: 15px;
 }
 
@@ -57,11 +57,13 @@ body {
     height: 100%;
     background-color: rgba(0, 0, 0, 0.7); /* Black background with opacity */
     overflow-y: auto; /* Enable scrolling for the modal */
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .modal-content {
     background-color: #222;
-    margin: 5% auto;
     padding: 20px;
     border-radius: 10px;
     width: 90%;
