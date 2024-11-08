@@ -55,6 +55,7 @@ const startGame = () => {
 const updatePage = (stageKey) => {
     console.log(`Updating page for stage: ${stageKey}`);
     
+    // Handle special cases for mini-games
     if (stageKey === "decryptPuzzle") {
         decryptPuzzle();
         return;
@@ -63,6 +64,7 @@ const updatePage = (stageKey) => {
         return;
     }
     
+    // Get the stage data from the story object
     const stage = story[stageKey];
     if (!stage) {
         console.error(`Stage ${stageKey} not found in story data`);
