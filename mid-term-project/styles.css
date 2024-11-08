@@ -104,23 +104,68 @@ button:active {
     padding: 10px;
 }
 
-/* Toggle Music Button */
-#toggleMusic {
+/* Toggle Music and Addendum Button Styling */
+#toggleMusic, #addendumBtn {
     background-color: #444;
     color: var(--primary-color);
     border: none;
     padding: 10px 20px;
-    margin-top: 20px;
+    margin-top: 15px;
     border-radius: 5px;
     box-shadow: 0px 0px 10px var(--primary-color);
     cursor: pointer;
     transition: all 0.3s ease;
 }
 
-#toggleMusic:hover {
+#toggleMusic:hover, #addendumBtn:hover {
     color: var(--secondary-color);
     background: #333;
     box-shadow: 0 0 15px var(--primary-color), 0 0 25px var(--secondary-color);
+}
+
+/* Modal styling */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Black background with opacity */
+}
+
+.modal-content {
+    background-color: #222;
+    margin: 15% auto;
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 600px;
+    box-shadow: 0px 0px 15px var(--primary-color);
+    color: var(--text-color);
+    text-align: center;
+    animation: modalFadeIn 0.5s;
+}
+
+.modal-content h2 {
+    color: var(--primary-color);
+}
+
+.modal-content p {
+    margin-top: 15px;
+}
+
+.close {
+    color: var(--secondary-color);
+    float: right;
+    font-size: 24px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.close:hover {
+    color: var(--primary-color);
 }
 
 /* Footer styling */
@@ -141,6 +186,12 @@ footer {
     }
 }
 
+@keyframes modalFadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Responsive Design */
 @media (max-width: 768px) {
     header {
         padding: 15px 0;
@@ -155,7 +206,7 @@ footer {
         font-size: 14px;
     }
 
-    #toggleMusic {
+    #toggleMusic, #addendumBtn {
         padding: 8px 15px;
     }
 }
