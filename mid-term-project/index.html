@@ -29,6 +29,7 @@
         </section>
 
         <button id="toggleMusic">🔊 Toggle Music</button>
+        <button id="addendumBtn" onclick="openAddendum()">📜 Addendum</button> <!-- Addendum button -->
     </main>
 
     <footer>
@@ -38,6 +39,16 @@
     <!-- Audio Elements for Sound Effects -->
     <audio id="backgroundMusic" src="assets/background.mp3" loop preload="auto"></audio>
     <audio id="clickSound" src="assets/click.mp3" preload="auto"></audio>
+
+    <!-- Addendum Modal -->
+    <div id="addendumModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeAddendum()">&times;</span>
+            <h2>Addendum</h2>
+            <p>Describe your process and creative choices along with any challenges faced and how you overcame them, including insights gained during this process.</p>
+            <p>Good luck in your adventure!</p>
+        </div>
+    </div>
 
     <script src="script.js"></script>
     <script>
