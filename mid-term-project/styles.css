@@ -105,6 +105,7 @@ button:hover {
     box-shadow: 0 0 15px var(--primary-color), 0 0 25px var(--secondary-color);
 }
 
+/* Addendum Modal Styles */
 .modal {
     display: none;
     position: fixed;
@@ -135,6 +136,17 @@ button:hover {
 .modal-content h2 {
     color: var(--primary-color);
     text-align: center;
+    margin-bottom: 15px;
+}
+
+.modal-content p, .modal-content ul {
+    margin-top: 10px;
+    text-align: justify;
+    line-height: 1.6;
+}
+
+.modal-content ul {
+    padding-left: 20px;
 }
 
 .close {
@@ -142,12 +154,14 @@ button:hover {
     float: right;
     font-size: 24px;
     cursor: pointer;
+    transition: color 0.3s ease;
 }
 
 .close:hover {
     color: var(--primary-color);
 }
 
+/* Animation for modal fade-in */
 @keyframes modalFadeIn {
     from { opacity: 0; }
     to { opacity: 1; }
