@@ -38,6 +38,14 @@ header {
     box-shadow: 0px 0px 15px var(--glow-color);
 }
 
+#storyImage {
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
 #choices {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
@@ -80,20 +88,69 @@ button:hover {
     padding: 10px;
 }
 
-#toggleMusic {
+#toggleMusic, #addendumBtn {
     margin-top: 20px;
     background-color: #444;
     color: var(--primary-color);
     border: none;
     padding: 10px 20px;
     border-radius: 5px;
-    box-shadow: 0px 0px 10px var(--primary-color);
     cursor: pointer;
+    box-shadow: 0px 0px 10px var(--primary-color);
     transition: all 0.3s ease;
 }
 
-#toggleMusic:hover {
+#toggleMusic:hover, #addendumBtn:hover {
     color: var(--secondary-color);
     background: #333;
     box-shadow: 0 0 15px var(--primary-color), 0 0 25px var(--secondary-color);
+}
+
+/* Addendum Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    background-color: #222;
+    padding: 20px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 600px;
+    max-height: 80vh;
+    overflow-y: auto;
+    box-shadow: 0px 0px 15px var(--primary-color);
+    color: var(--text-color);
+}
+
+.modal-content h2 {
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.modal-content p {
+    text-align: justify;
+    line-height: 1.6;
+}
+
+.close {
+    color: var(--secondary-color);
+    float: right;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: var(--primary-color);
 }
