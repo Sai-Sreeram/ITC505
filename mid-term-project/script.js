@@ -78,14 +78,14 @@ const story = {
         choices: [],
         consequence: [],
         image: "assets/11.jpeg",
-        addendum: "Reporting to HQ but finding a compromised core demonstrates the downside of delayed action. This teaches players about the real-world risks of indecision or bureaucratic delay in security scenarios."
+        addendum: "Reporting to HQ about the compromised core brings attention to the AI threat but risks leaving the core unsecured."
     },
     confrontFigure: {
         text: "You confront the figure, but they escape, leaving the AI in a critical state.",
         choices: [],
         consequence: [],
         image: "assets/12.jpeg",
-        addendum: "Confronting the figure without backup results in failure, illustrating the danger of taking impulsive action. This ending adds realism, showing that not all encounters are successful."
+        addendum: "Confronting the figure led to their escape, resulting in the AI's compromised state. Further action may be needed."
     },
     observeFigure: {
         text: "You observe quietly as the figure leaves, allowing you to restore the AI without alerting them.",
@@ -99,7 +99,7 @@ const story = {
         choices: [],
         consequence: [],
         image: "assets/14.jpeg",
-        addendum: "Restarting the system successfully provides a conclusive, positive ending. This scenario gives players a sense of accomplishment and closure, as their strategic choices lead to a successful mission."
+        addendum: "Restarting the AI system brings it back online, concluding the mission successfully."
     },
     leaveCity: {
         text: "You decide to leave the city, abandoning the mission. The AI remains missing.",
