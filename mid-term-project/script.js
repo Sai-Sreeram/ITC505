@@ -7,91 +7,91 @@ const story = {
         text: "You’re assigned to find the missing AI controlling the city. Start by choosing where to investigate.",
         choices: ["Check Surveillance Room", "Visit Data Center", "Question suspect in Tech Lab", "Explore AI Hub"],
         consequence: ["surveillanceRoom", "dataCenter", "techLab", "aiHub"],
-        image: "images/start.jpg"
+        image: "assets/1.jpeg"
     },
     surveillanceRoom: {
         text: "You find some unusual activity in the surveillance data logs. It looks encrypted. Try to decrypt it.",
         choices: ["Decrypt Data", "Leave Room"],
         consequence: ["decryptPuzzle", "start"],
-        image: "images/surveillance.jpg"
+        image: "assets/2.jpeg"
     },
     dataCenter: {
         text: "The Data Center shows no signs of a forced breach. You find a hidden file named 'AI_Location'.",
         choices: ["Analyze File", "Return to HQ"],
         consequence: ["dataAnalysis", "start"],
-        image: "images/datacenter.jpg"
+        image: "assets/3.jpeg"
     },
     techLab: {
         text: "The suspect is nervous and gives you some clues. You need to choose your next step.",
         choices: ["Return to HQ", "Explore AI Hub"],
         consequence: ["start", "aiHub"],
-        image: "images/techlab.jpg"
+        image: "assets/4.jpeg"
     },
     aiHub: {
         text: "You arrive at the AI Hub and find clues that lead to the AI's last known location.",
         choices: ["Investigate Deep Storage", "Check Maintenance Logs"],
         consequence: ["deepStorage", "maintenanceLogs"],
-        image: "images/aihub.jpg"
+        image: "assets/5.jpeg"
     },
     deepStorage: {
         text: "You find the AI’s backup core! But there’s a security breach.",
         choices: ["Attempt to Secure Backup", "Report to HQ"],
         consequence: ["secureBackup", "reportHQ"],
-        image: "images/deepstorage.jpg"
+        image: "assets/6.jpeg"
     },
     maintenanceLogs: {
         text: "The maintenance logs reveal an unauthorized access point.",
         choices: ["Trace the Access Point", "Ignore and Investigate Further"],
         consequence: ["traceAccess", "investigateFurther"],
-        image: "images/maintenance.jpg"
+        image: "assets/7.jpeg"
     },
     traceAccess: {
         text: "Tracing the access point reveals a shadowy figure tampering with the AI core!",
         choices: ["Confront the Figure", "Hide and Observe"],
         consequence: ["confrontFigure", "observeFigure"],
-        image: "images/traceaccess.jpg"
+        image: "assets/8.jpeg"
     },
     investigateFurther: {
         text: "You ignore the access point and explore more, but the AI system is shut down completely.",
         choices: ["Restart System", "Leave City"],
         consequence: ["systemRestart", "leaveCity"],
-        image: "images/investigatefurther.jpg"
+        image: "assets/9.jpeg"
     },
     secureBackup: {
         text: "You successfully secured the backup core! The AI will be safe for now.",
         choices: [],
         consequence: [],
-        image: "images/securebackup.jpg"
+        image: "assets/10.jpeg"
     },
     reportHQ: {
         text: "You report to HQ, but the AI’s backup core is compromised. The city is at risk!",
         choices: [],
         consequence: [],
-        image: "images/reporthq.jpg"
+        image: "assets/11.jpeg"
     },
     confrontFigure: {
         text: "You confront the figure, but they escape, leaving the AI in a critical state.",
         choices: [],
         consequence: [],
-        image: "images/confrontfigure.jpg"
+        image: "assets/12.jpeg"
     },
     observeFigure: {
         text: "You observe quietly as the figure leaves, allowing you to restore the AI without alerting them.",
         choices: [],
         consequence: [],
-        image: "images/observefigure.jpg"
+        image: "assets/13.jpeg"
     },
     systemRestart: {
         text: "You restart the system successfully, bringing the AI back online. Mission accomplished!",
         choices: [],
         consequence: [],
-        image: "images/systemrestart.jpg"
+        image: "assets/14.jpeg"
     },
     leaveCity: {
         text: "You decide to leave the city, abandoning the mission. The AI remains missing.",
         choices: [],
         consequence: [],
-        image: "images/leavecity.jpg"
+        image: "assets/15.jpeg"
     }
 };
 
