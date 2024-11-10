@@ -108,6 +108,17 @@ const startGame = () => {
 // Function to update the page content based on the story stage
 const updatePage = (stageKey) => {
     console.log(`Updating page for stage: ${stageKey}`);
+
+    // Check for mini-game stages
+    if (stageKey === "decryptPuzzle") {
+        decryptPuzzle();
+        return;
+    } else if (stageKey === "dataAnalysis") {
+        dataAnalysis();
+        return;
+    }
+
+    // Get the stage data from the story object
     const stage = story[stageKey];
     if (!stage) {
         console.error(`Stage ${stageKey} not found in story data`);
@@ -146,7 +157,7 @@ const playClickSound = () => {
 
 // Mini-game: Simple decryption challenge
 const decryptPuzzle = () => {
-    console.log("Decrypting puzzle");
+    console.log("decryptPuzzle mini-game started");
     const attempt = prompt("Enter decryption key (Hint: 1337):");
     if (attempt === "1337") {
         alert("Decryption successful! You found a lead.");
@@ -158,7 +169,7 @@ const decryptPuzzle = () => {
 
 // Mini-game: Data analysis challenge
 const dataAnalysis = () => {
-    console.log("Analyzing data");
+    console.log("dataAnalysis mini-game started");
     const data = prompt("Analyze data pattern (Enter 1234 for success):");
     if (data === "1234") {
         alert("Analysis successful! This data points to the AI’s possible location.");
