@@ -38,7 +38,7 @@ header {
     box-shadow: 0px 0px 15px var(--glow-color);
 }
 
-#storyImage {
+.story-image {
     width: 100%;
     max-height: 400px;
     object-fit: cover;
