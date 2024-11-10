@@ -113,6 +113,7 @@ const story = {
 // Initialize Audio Elements
 const backgroundMusic = document.getElementById("backgroundMusic");
 const clickSound = document.getElementById("clickSound");
+let musicPlayed = false; // Flag to track if music has started
 
 // Start the game
 const startGame = () => {
@@ -137,39 +138,65 @@ const updatePage = (stageKey) => {
     if (!stage) return;
 
     document.getElementById("storyText").innerText = stage.text;
-    document.getElementById("storyImage").src = stage.image;
+
+    // Update image based on the current stage
+    const storyImage = document.getElementById("storyImage");
+    storyImage.src = stage.image;
+    storyImage.alt = `Image for ${stageKey}`;
+
+    // Update addendum content based on the current stage
     document.getElementById("addendumContent").innerText = stage.addendum;
 
+    // Clear previous choices and add new ones
     const choicesContainer = document.getElementById("choices");
     choicesContainer.innerHTML = "";
     stage.choices.forEach((choice, index) => {
         const button = document.createElement("button");
         button.innerText = choice;
+
+        // Play click sound and start music on the first interaction
         button.onclick = () => {
             playClickSound();
+            if (!musicPlayed) {
+                startBackgroundMusic();
+                musicPlayed = true;
+            }
             updatePage(stage.consequence[index]);
         };
+
         choicesContainer.appendChild(button);
     });
 };
 
-const toggleAddendum = () => {
-    const addendum = document.getElementById("addendum");
-    addendum.style.display = addendum.style.display === "flex" ? "none" : "flex";
+// Function to play click sound
+const playClickSound = () => {
+    clickSound.currentTime = 0;
+    clickSound.play();
 };
 
-// Mini-games for specific stages
+// Function to start background music after the first interaction
+const startBackgroundMusic = () => {
+    backgroundMusic.volume = 0.3;
+    backgroundMusic.play().catch(error => {
+        console.error("Background music failed to play:", error);
+    });
+};
+
+// Mini-game: Simple decryption challenge
 const decryptPuzzle = () => {
+    console.log("decryptPuzzle mini-game started");
     const attempt = prompt("Enter decryption key (Hint: 1337):");
     if (attempt === "1337") {
         alert("Decryption successful! You found a lead.");
-        updatePage("dataCenter");
+        updatePage("dataCenter"); // Move to next stage
     } else {
         alert("Decryption failed. Try again.");
     }
 };
 
+// Mini-game: Data analysis challenge
 const dataAnalysis = () => {
+    console.log("dataAnalysis mini-game started");
     const data = prompt("Analyze data pattern (Enter 1234 for success):");
     if (data === "1234") {
         alert("Analysis successful! This data points to the AI’s possible location.");
@@ -179,6 +206,7 @@ const dataAnalysis = () => {
     }
 };
 
+// Toggle Background Music
 const toggleMusic = () => {
     if (backgroundMusic.paused) {
         backgroundMusic.play();
@@ -189,5 +217,22 @@ const toggleMusic = () => {
     }
 };
 
+// Addendum Modal Toggle
+const toggleAddendum = () => {
+    const addendumModal = document.getElementById("addendumModal");
+    addendumModal.style.display = addendumModal.style.display === "flex" ? "none" : "flex";
+};
+
+// Close modal when clicking outside the content area
+window.onclick = (event) => {
+    const modal = document.getElementById("addendumModal");
+    if (event.target === modal) {
+        modal.style.display = "none";
+    }
+};
+
+// Attach event listener for music toggle
 document.getElementById("toggleMusic").onclick = toggleMusic;
+
+// Start game on page load
 document.addEventListener("DOMContentLoaded", startGame);
