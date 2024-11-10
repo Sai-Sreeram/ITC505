@@ -1,7 +1,7 @@
 // Confirm JavaScript file is loaded
 console.log("JavaScript loaded");
 
-// Story Data with 15 stages, each with an associated image and addendum
+// Story Data with all 15 stages, each with an associated image and addendum
 const story = {
     start: {
         text: "You’re assigned to find the missing AI controlling the city. Start by choosing where to investigate.",
