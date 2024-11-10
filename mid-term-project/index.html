@@ -14,7 +14,7 @@
 
     <main>
         <section id="storyContainer">
-            <img id="storyImage" src="images/start.jpg" alt="Start image" style="width: 100%; max-height: 300px; object-fit: cover; border-radius: 10px; margin-bottom: 20px;">
+            <img id="storyImage" src="images/start.jpg" alt="Start image" style="width: 100%; max-height: 400px; object-fit: cover; border-radius: 10px; margin-bottom: 20px;">
             <div id="storyText">Your journey begins...</div>
             <div id="choices" class="choices-grid"></div>
         </section>
@@ -34,6 +34,14 @@
 
     <footer>
         <p>Last updated: <span id="lastModified"></span></p>
+        <button id="addendumBtn" onclick="toggleAddendum()">📜 Addendum</button>
+        <div id="addendum" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="toggleAddendum()">&times;</span>
+                <h2>Addendum</h2>
+                <p id="addendumContent">In the beginning, you are tasked with finding the missing AI that controls vital city functions. Choose your actions wisely, as every choice will lead to a different part of the story with unique challenges and opportunities. Technical strategies such as data decryption, surveillance analysis, and access point tracing are integrated to enrich the detective experience.</p>
+            </div>
+        </div>
     </footer>
 
     <!-- Audio Elements for Sound Effects -->
