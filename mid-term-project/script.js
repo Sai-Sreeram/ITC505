@@ -3,7 +3,7 @@ console.log("JavaScript loaded");
 
 let restartTimer; // Variable to store the restart timer
 
-// Story Data with all stages and unique addendum content for each stage
+// Story Data with all stages, images, and unique addendum content
 const story = {
     start: {
         text: "You’re assigned to find the missing AI controlling the city. Start by choosing where to investigate.",
@@ -115,10 +115,15 @@ const story = {
 // Initialize Audio Elements
 const backgroundMusic = document.getElementById("backgroundMusic");
 const clickSound = document.getElementById("clickSound");
-let musicPlayed = false; // Flag to track if music has started
 
-// Set initial state of toggle music button
-document.getElementById("toggleMusic").textContent = backgroundMusic.paused ? "🔊 Music On" : "🔇 Music Off";
+// Set initial state of the toggle music button and start with music on
+backgroundMusic.volume = 0.3;
+backgroundMusic.play().then(() => {
+    document.getElementById("toggleMusic").textContent = "🔇 Music Off";
+}).catch(error => {
+    console.error("Background music failed to play initially:", error);
+    document.getElementById("toggleMusic").textContent = "🔊 Music On";
+});
 
 // Start the game
 const startGame = () => {
@@ -175,10 +180,6 @@ const updatePage = (stageKey) => {
 
         button.onclick = () => {
             playClickSound();
-            if (!musicPlayed) {
-                startBackgroundMusic();
-                musicPlayed = true;
-            }
             updatePage(stage.consequence[index]);
         };
 
@@ -192,19 +193,14 @@ const playClickSound = () => {
     clickSound.play();
 };
 
-// Function to start background music after the first interaction
-const startBackgroundMusic = () => {
-    backgroundMusic.volume = 0.3;
-    backgroundMusic.play().catch(error => {
-        console.error("Background music failed to play:", error);
-    });
-};
-
 // Toggle Background Music
 const toggleMusic = () => {
     if (backgroundMusic.paused) {
-        backgroundMusic.play();
-        document.getElementById("toggleMusic").textContent = "🔇 Music Off";
+        backgroundMusic.play().then(() => {
+            document.getElementById("toggleMusic").textContent = "🔇 Music Off";
+        }).catch(error => {
+            console.error("Background music failed to play:", error);
+        });
     } else {
         backgroundMusic.pause();
         document.getElementById("toggleMusic").textContent = "🔊 Music On";
