@@ -40,6 +40,14 @@ header {
     box-shadow: 0px 0px 15px var(--glow-color);
 }
 
+.story-image {
+    width: 100%;
+    height: auto;
+    max-width: 500px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
 #choices {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
@@ -185,8 +193,11 @@ button:hover {
 }
 
 @media (max-width: 768px) {
-    .modal-content {
+    .modal-content, #storyContainer, #cityMap {
         width: 90%;
         margin: 10% auto;
+    }
+    .story-image {
+        max-width: 100%;
     }
 }
