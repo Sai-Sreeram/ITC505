@@ -16,6 +16,7 @@ body {
     padding: 0;
 }
 
+/* Header styling */
 header {
     background: #222;
     padding: 20px;
@@ -30,6 +31,7 @@ header {
     margin-top: 10px;
 }
 
+/* Story container styling */
 #storyContainer {
     background: rgba(17, 17, 17, 0.9);
     border-radius: 10px;
@@ -97,6 +99,7 @@ button:hover {
     box-shadow: 0 0 15px var(--primary-color), 0 0 25px var(--secondary-color);
 }
 
+/* Blurred overlay when the restart button is visible */
 .blur-overlay {
     position: fixed;
     top: 0;
@@ -109,6 +112,7 @@ button:hover {
     display: none;
 }
 
+/* City Map styling */
 #cityMap {
     background: rgba(34, 34, 34, 0.9);
     border: 2px solid var(--secondary-color);
@@ -125,7 +129,7 @@ button:hover {
     padding: 10px;
 }
 
-#toggleMusic, #storyAddendumBtn, #technicalAddendumBtn {
+#toggleMusic, #addendumBtn, #technicalAddendumBtn {
     margin-top: 20px;
     background-color: #444;
     color: var(--primary-color);
@@ -137,12 +141,13 @@ button:hover {
     transition: all 0.3s ease;
 }
 
-#toggleMusic:hover, #storyAddendumBtn:hover, #technicalAddendumBtn:hover {
+#toggleMusic:hover, #addendumBtn:hover, #technicalAddendumBtn:hover {
     color: var(--secondary-color);
     background: #333;
     box-shadow: 0 0 15px var(--primary-color), 0 0 25px var(--secondary-color);
 }
 
+/* Addendum and Technical Addendum Modal Styles */
 .modal {
     display: none;
     position: fixed;
@@ -169,17 +174,19 @@ button:hover {
     color: var(--text-color);
     position: relative;
     animation: modalFadeIn 0.5s;
+    text-align: justify;
+    line-height: 1.6;
 }
 
 .modal-content h2 {
     color: var(--primary-color);
     text-align: center;
     margin-bottom: 15px;
+    font-size: 1.5em;
 }
 
 .modal-content p {
-    text-align: justify;
-    line-height: 1.6;
+    margin-top: 10px;
 }
 
 .close {
