@@ -76,7 +76,7 @@ button:hover {
 
 /* Restart button styling */
 #restartButton {
-    display: none; /* Hidden by default */
+    display: none;
     position: fixed;
     top: 50%;
     left: 50%;
@@ -90,7 +90,7 @@ button:hover {
     box-shadow: 0px 0px 20px var(--glow-color);
     cursor: pointer;
     transition: all 0.3s ease;
-    z-index: 1001; /* Above the blur overlay */
+    z-index: 1001;
 }
 
 #restartButton:hover {
@@ -108,8 +108,8 @@ button:hover {
     height: 100%;
     background: rgba(0, 0, 0, 0.5);
     backdrop-filter: blur(5px);
-    z-index: 1000; /* Behind the restart button */
-    display: none; /* Hidden by default */
+    z-index: 1000;
+    display: none;
 }
 
 /* City Map styling */
@@ -129,7 +129,7 @@ button:hover {
     padding: 10px;
 }
 
-#toggleMusic, #addendumBtn {
+#toggleMusic, #addendumBtn, #technicalAddendumBtn {
     margin-top: 20px;
     background-color: #444;
     color: var(--primary-color);
@@ -141,7 +141,7 @@ button:hover {
     transition: all 0.3s ease;
 }
 
-#toggleMusic:hover, #addendumBtn:hover {
+#toggleMusic:hover, #addendumBtn:hover, #technicalAddendumBtn:hover {
     color: var(--secondary-color);
     background: #333;
     box-shadow: 0 0 15px var(--primary-color), 0 0 25px var(--secondary-color);
