@@ -158,7 +158,7 @@ const updatePage = (stageKey) => {
     const choicesContainer = document.getElementById("choices");
     choicesContainer.innerHTML = "";
 
-    // Update Story Addendum content dynamically
+    // Update addendum content dynamically
     document.getElementById("addendumContent").innerText = stage.addendum;
 
     // Display Restart Button after 5 seconds if no choices are available (end stage)
@@ -240,36 +240,20 @@ const toggleAddendum = () => {
     addendumModal.style.display = addendumModal.style.display === "flex" ? "none" : "flex";
 };
 
-// Technical Addendum Content
-const technicalAddendumContent = `
-    <p>Building this project involved thoughtful technical choices aimed at creating an interactive and visually appealing experience, while keeping the structure clean and responsive.</p>
-    <p>The HTML structure centers around key semantic tags to improve accessibility and maintain a logical flow. I used <code>section</code> tags to separate the story container, city map, and modal components, keeping each part distinct and easy to navigate. Additionally, <code>button</code>, <code>div</code>, and <code>img</code> tags provide consistent layout, helping to organize information and functionality.</p>
-    <p>CSS plays a significant role in setting a cohesive look and feel. I defined color variables to ensure a unified color theme throughout the site and to make styling adjustments easier. Animations and button transitions add engagement and responsiveness, giving users feedback on interactions.</p>
-    <p>The overlay blur effect that appears at each story’s ending was used to highlight the restart button, keeping the user’s focus directed without overwhelming the screen. Media queries ensure the layout adapts smoothly across device sizes, which was important for accessibility and user experience.</p>
-    <p>JavaScript is essential for handling the story’s branching paths, user choices, and overall interactivity. Each stage of the story is organized into an object, with text, choices, consequences, images, and addendum content—this modular approach makes it easy to add, remove, or change stages as needed. Event listeners manage user interactions, while functions update the page dynamically based on user choices, enhancing the game's immersive quality.</p>
-`;
-
-// Function to toggle Technical Addendum modal
+// Technical Addendum Modal Toggle
 const toggleTechnicalAddendum = () => {
     const technicalAddendumModal = document.getElementById("technicalAddendumModal");
-    const technicalAddendumContentElement = document.getElementById("technicalAddendumContent");
-    technicalAddendumContentElement.innerHTML = technicalAddendumContent;
     technicalAddendumModal.style.display = technicalAddendumModal.style.display === "flex" ? "none" : "flex";
-};
-
-// Show Technical Addendum modal on page load
-window.onload = () => {
-    toggleTechnicalAddendum();
 };
 
 // Close modal when clicking outside the content area
 window.onclick = (event) => {
     const addendumModal = document.getElementById("addendumModal");
     const technicalAddendumModal = document.getElementById("technicalAddendumModal");
+
     if (event.target === addendumModal) {
         addendumModal.style.display = "none";
-    }
-    if (event.target === technicalAddendumModal) {
+    } else if (event.target === technicalAddendumModal) {
         technicalAddendumModal.style.display = "none";
     }
 };
@@ -281,4 +265,7 @@ const exploreArea = (areaKey) => {
 };
 
 // Start game on page load
-document.addEventListener("DOMContentLoaded", startGame);
+document.addEventListener("DOMContentLoaded", () => {
+    document.getElementById("technicalAddendumModal").style.display = "flex"; // Show technical addendum on page load
+    startGame();
+});
