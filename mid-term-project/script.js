@@ -240,12 +240,23 @@ const toggleAddendum = () => {
     addendumModal.style.display = addendumModal.style.display === "flex" ? "none" : "flex";
 };
 
+// Technical Addendum Modal Toggle
+const toggleTechnicalAddendum = () => {
+    const technicalAddendumModal = document.getElementById("technicalAddendumModal");
+    technicalAddendumModal.style.display = technicalAddendumModal.style.display === "flex" ? "none" : "flex";
+};
+
+// Show Technical Addendum modal on page load
+window.onload = () => {
+    toggleTechnicalAddendum();
+};
+
 // Close modal when clicking outside the content area
 window.onclick = (event) => {
-    const modal = document.getElementById("addendumModal");
-    if (event.target === modal) {
-        modal.style.display = "none";
-    }
+    const addendumModal = document.getElementById("addendumModal");
+    const technicalAddendumModal = document.getElementById("technicalAddendumModal");
+    if (event.target === addendumModal) addendumModal.style.display = "none";
+    if (event.target === technicalAddendumModal) technicalAddendumModal.style.display = "none";
 };
 
 // Function to handle navigation buttons under City Map
