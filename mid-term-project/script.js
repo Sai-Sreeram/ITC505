@@ -1,7 +1,9 @@
 // Confirm JavaScript file is loaded
 console.log("JavaScript loaded");
 
-// Story Data with all 15 stages, each with an associated image
+let restartTimer; // Declare a variable to store the restart timer
+
+// Story Data with all stages
 const story = {
     start: {
         text: "You’re assigned to find the missing AI controlling the city. Start by choosing where to investigate.",
@@ -102,6 +104,7 @@ let musicPlayed = false; // Flag to track if music has started
 
 // Start the game
 const startGame = () => {
+    clearTimeout(restartTimer); // Clear any previous timer
     document.getElementById("restartButton").style.display = "none"; // Hide restart button on start
     document.querySelector('.blur-overlay').style.display = "none"; // Hide blur overlay
     updatePage("start");
@@ -132,10 +135,13 @@ const updatePage = (stageKey) => {
     const choicesContainer = document.getElementById("choices");
     choicesContainer.innerHTML = "";
 
-    // Display Restart Button if no choices are available (end stage)
+    // Display Restart Button after 5 seconds if no choices are available (end stage)
     if (stage.choices.length === 0) {
-        document.getElementById("restartButton").style.display = "block";
-        document.querySelector('.blur-overlay').style.display = "block"; // Show blur overlay at end
+        document.querySelector('.blur-overlay').style.display = "none"; // Hide blur overlay initially
+        restartTimer = setTimeout(() => {
+            document.getElementById("restartButton").style.display = "block";
+            document.querySelector('.blur-overlay').style.display = "block"; // Show blur overlay after 5 seconds
+        }, 5000); // 5-second delay before showing the restart button
     } else {
         document.getElementById("restartButton").style.display = "none";
         document.querySelector('.blur-overlay').style.display = "none"; // Hide blur overlay during gameplay
