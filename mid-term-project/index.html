@@ -17,6 +17,8 @@
             <img id="storyImage" src="assets/1.jpeg" alt="Start image" class="story-image">
             <div id="storyText">Your journey begins...</div>
             <div id="choices" class="choices-grid"></div>
+            <!-- Restart Button -->
+            <button id="restartButton" style="display: none;" onclick="startGame()">Restart Game</button>
         </section>
 
         <section id="cityMap">
@@ -40,6 +42,9 @@
             </div>
         </div>
     </main>
+
+    <!-- Blurred overlay for end screen -->
+    <div class="blur-overlay"></div>
 
     <footer>
         <p>Last updated: <span id="lastModified"></span></p>
