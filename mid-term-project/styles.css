@@ -172,6 +172,7 @@ button:hover {
     overflow-y: auto;
     box-shadow: 0px 0px 15px var(--primary-color);
     color: var(--text-color);
+    position: relative;
     animation: modalFadeIn 0.5s;
 }
 
@@ -186,6 +187,22 @@ button:hover {
     line-height: 1.6;
 }
 
+/* Close Button Styles */
+.close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    color: var(--secondary-color);
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.close:hover {
+    color: var(--primary-color);
+}
+
 /* Animation for modal fade-in */
 @keyframes modalFadeIn {
     from { opacity: 0; }
@@ -193,7 +210,7 @@ button:hover {
 }
 
 @media (max-width: 768px) {
-    .modal-content, #storyContainer, #cityMap {
+    .modal-content {
         width: 90%;
         margin: 10% auto;
     }
