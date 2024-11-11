@@ -1,7 +1,7 @@
 // Confirm JavaScript file is loaded
 console.log("JavaScript loaded");
 
-let restartTimer; // Declare a variable to store the restart timer
+let restartTimer; // Variable to store the restart timer
 
 // Story Data with all stages
 const story = {
