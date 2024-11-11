@@ -158,7 +158,7 @@ const updatePage = (stageKey) => {
     const choicesContainer = document.getElementById("choices");
     choicesContainer.innerHTML = "";
 
-    // Update Story Addendum content dynamically
+    // Update addendum content dynamically
     document.getElementById("addendumContent").innerText = stage.addendum;
 
     // Display Restart Button after 5 seconds if no choices are available (end stage)
@@ -234,7 +234,7 @@ const dataAnalysis = () => {
     }
 };
 
-// Story Addendum Modal Toggle
+// Addendum Modal Toggle
 const toggleAddendum = () => {
     const addendumModal = document.getElementById("addendumModal");
     addendumModal.style.display = addendumModal.style.display === "flex" ? "none" : "flex";
