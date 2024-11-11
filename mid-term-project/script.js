@@ -1,66 +1,98 @@
 // Confirm JavaScript file is loaded
 console.log("JavaScript loaded");
 
-// Story Data with all 15 stages, each with an associated image and addendum
+// Story Data with all 15 stages, each with an associated image
 const story = {
     start: {
         text: "You’re assigned to find the missing AI controlling the city. Start by choosing where to investigate.",
         choices: ["Check Surveillance Room", "Visit Data Center", "Question suspect in Tech Lab", "Explore AI Hub"],
         consequence: ["surveillanceRoom", "dataCenter", "techLab", "aiHub"],
-        image: "assets/1.jpeg",
-        addendum: "This starting stage introduces the player to the mission and sets up an interactive environment."
+        image: "assets/1.jpeg"
     },
     surveillanceRoom: {
         text: "You find some unusual activity in the surveillance data logs. It looks encrypted. Try to decrypt it.",
         choices: ["Decrypt Data", "Leave Room"],
         consequence: ["decryptPuzzle", "start"],
-        image: "assets/2.jpeg",
-        addendum: "In this stage, players encounter encryption—a technical skill in cybersecurity."
+        image: "assets/2.jpeg"
     },
     dataCenter: {
         text: "The Data Center shows no signs of a forced breach. You find a hidden file named 'AI_Location'.",
         choices: ["Analyze File", "Return to HQ"],
         consequence: ["dataAnalysis", "start"],
-        image: "assets/3.jpeg",
-        addendum: "Here, a hidden file represents subtle clues, adding depth to the investigation."
+        image: "assets/3.jpeg"
     },
     techLab: {
         text: "The suspect is nervous and gives you some clues. You need to choose your next step.",
         choices: ["Return to HQ", "Explore AI Hub"],
         consequence: ["start", "aiHub"],
-        image: "assets/4.jpeg",
-        addendum: "Introducing a suspect adds an interpersonal element."
+        image: "assets/4.jpeg"
     },
     aiHub: {
         text: "You arrive at the AI Hub and find clues that lead to the AI's last known location.",
         choices: ["Investigate Deep Storage", "Check Maintenance Logs"],
         consequence: ["deepStorage", "maintenanceLogs"],
-        image: "assets/5.jpeg",
-        addendum: "The AI Hub serves as the central hub for further investigation."
+        image: "assets/5.jpeg"
     },
     deepStorage: {
         text: "You find the AI’s backup core! But there’s a security breach.",
         choices: ["Attempt to Secure Backup", "Report to HQ"],
         consequence: ["secureBackup", "reportHQ"],
-        image: "assets/6.jpeg",
-        addendum: "Finding the AI’s backup core was a plot twist designed to intensify the mission."
+        image: "assets/6.jpeg"
     },
-    // End stage examples
+    maintenanceLogs: {
+        text: "The maintenance logs reveal an unauthorized access point.",
+        choices: ["Trace the Access Point", "Ignore and Investigate Further"],
+        consequence: ["traceAccess", "investigateFurther"],
+        image: "assets/7.jpeg"
+    },
+    traceAccess: {
+        text: "Tracing the access point reveals a shadowy figure tampering with the AI core!",
+        choices: ["Confront the Figure", "Hide and Observe"],
+        consequence: ["confrontFigure", "observeFigure"],
+        image: "assets/8.jpeg"
+    },
+    investigateFurther: {
+        text: "You ignore the access point and explore more, but the AI system is shut down completely.",
+        choices: ["Restart System", "Leave City"],
+        consequence: ["systemRestart", "leaveCity"],
+        image: "assets/9.jpeg"
+    },
     secureBackup: {
         text: "You successfully secured the backup core! The AI will be safe for now.",
-        choices: [], // No choices for end stages
+        choices: [],
         consequence: [],
-        image: "assets/10.jpeg",
-        addendum: "Successfully securing the core provides a rewarding ending."
+        image: "assets/10.jpeg"
+    },
+    reportHQ: {
+        text: "You report to HQ, but the AI’s backup core is compromised. The city is at risk!",
+        choices: [],
+        consequence: [],
+        image: "assets/11.jpeg"
+    },
+    confrontFigure: {
+        text: "You confront the figure, but they escape, leaving the AI in a critical state.",
+        choices: [],
+        consequence: [],
+        image: "assets/12.jpeg"
+    },
+    observeFigure: {
+        text: "You observe quietly as the figure leaves, allowing you to restore the AI without alerting them.",
+        choices: [],
+        consequence: [],
+        image: "assets/13.jpeg"
+    },
+    systemRestart: {
+        text: "You restart the system successfully, bringing the AI back online. Mission accomplished!",
+        choices: [],
+        consequence: [],
+        image: "assets/14.jpeg"
     },
     leaveCity: {
         text: "You decide to leave the city, abandoning the mission. The AI remains missing.",
-        choices: [], // No choices for end stages
+        choices: [],
         consequence: [],
-        image: "assets/15.jpeg",
-        addendum: "Leaving the city results in mission failure."
+        image: "assets/15.jpeg"
     }
-    // Continue defining remaining stages as necessary
 };
 
 // Initialize Audio Elements
@@ -79,7 +111,7 @@ const startGame = () => {
 const updatePage = (stageKey) => {
     console.log(`Updating page for stage: ${stageKey}`);
 
-    // Check for mini-game stages
+    // Handle mini-games
     if (stageKey === "decryptPuzzle") {
         decryptPuzzle();
         return;
@@ -88,6 +120,7 @@ const updatePage = (stageKey) => {
         return;
     }
 
+    // Get the stage data from the story object
     const stage = story[stageKey];
     if (!stage) return;
 
@@ -95,11 +128,11 @@ const updatePage = (stageKey) => {
     const storyImage = document.getElementById("storyImage");
     storyImage.src = stage.image;
     storyImage.alt = `Image for ${stageKey}`;
-    document.getElementById("addendumContent").innerText = stage.addendum;
 
     const choicesContainer = document.getElementById("choices");
     choicesContainer.innerHTML = "";
 
+    // Display Restart Button if no choices are available (end stage)
     if (stage.choices.length === 0) {
         document.getElementById("restartButton").style.display = "block";
         document.querySelector('.blur-overlay').style.display = "block"; // Show blur overlay at end
@@ -108,9 +141,11 @@ const updatePage = (stageKey) => {
         document.querySelector('.blur-overlay').style.display = "none"; // Hide blur overlay during gameplay
     }
 
+    // Add choice buttons for non-ending stages
     stage.choices.forEach((choice, index) => {
         const button = document.createElement("button");
         button.innerText = choice;
+
         button.onclick = () => {
             playClickSound();
             if (!musicPlayed) {
