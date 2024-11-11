@@ -234,5 +234,11 @@ window.onclick = (event) => {
 // Attach event listener for music toggle
 document.getElementById("toggleMusic").onclick = toggleMusic;
 
+// Function to handle navigation buttons under City Map
+const exploreArea = (areaKey) => {
+    console.log(`Exploring area: ${areaKey}`);
+    updatePage(areaKey);
+};
+
 // Start game on page load
 document.addEventListener("DOMContentLoaded", startGame);
