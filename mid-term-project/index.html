@@ -33,16 +33,16 @@
             </div>
         </section>
 
-        <!-- Music Toggle, Story Addendum, and Technical Addendum Buttons -->
-        <button id="toggleMusic">🔊 Music On</button>
-        <button id="storyAddendumBtn" onclick="toggleAddendum()">📜 Story Addendum</button>
+        <!-- Music Toggle, Addendum, and Technical Addendum Buttons -->
+        <button id="toggleMusic">🔊 Toggle Music</button>
+        <button id="addendumBtn" onclick="toggleAddendum()">📜 Addendum</button>
         <button id="technicalAddendumBtn" onclick="toggleTechnicalAddendum()">📜 Technical Addendum</button>
 
-        <!-- Story Addendum Modal -->
+        <!-- Addendum Modal -->
         <div id="addendumModal" class="modal">
             <div class="modal-content">
                 <span class="close" onclick="toggleAddendum()">&times;</span>
-                <h2>Story Addendum</h2>
+                <h2>Addendum</h2>
                 <p id="addendumContent">
                     In the beginning, you are tasked with finding the missing AI that controls vital city functions. Choose your actions wisely, as every choice will lead to a different part of the story with unique challenges and opportunities.
                 </p>
@@ -54,9 +54,7 @@
             <div class="modal-content">
                 <span class="close" onclick="toggleTechnicalAddendum()">&times;</span>
                 <h2>Technical Addendum</h2>
-                <p id="technicalAddendumContent">
-                    Building this project involved thoughtful technical choices aimed at creating an interactive and visually appealing experience, while keeping the structure clean and responsive. The HTML structure centers around key semantic tags to improve accessibility and maintain a logical flow. CSS plays a significant role in setting a cohesive look and feel. JavaScript is essential for handling the story’s branching paths, user choices, and overall interactivity.
-                </p>
+                <div id="technicalAddendumContent"></div>
             </div>
         </div>
     </main>
