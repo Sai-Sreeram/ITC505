@@ -33,9 +33,10 @@
             </div>
         </section>
 
-        <!-- Music Toggle and Addendum Buttons -->
+        <!-- Music Toggle, Addendum, and Technical Addendum Buttons -->
         <button id="toggleMusic">🔊 Toggle Music</button>
         <button id="addendumBtn" onclick="toggleAddendum()">📜 Addendum</button>
+        <button id="technicalAddendumBtn" onclick="toggleTechnicalAddendum()">📘 Technical Addendum</button>
 
         <!-- Addendum Modal -->
         <div id="addendumModal" class="modal">
@@ -44,6 +45,23 @@
                 <h2>Addendum</h2>
                 <p id="addendumContent">
                     In the beginning, you are tasked with finding the missing AI that controls vital city functions. Choose your actions wisely, as every choice will lead to a different part of the story with unique challenges and opportunities.
+                </p>
+            </div>
+        </div>
+
+        <!-- Technical Addendum Modal -->
+        <div id="technicalAddendumModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="toggleTechnicalAddendum()">&times;</span>
+                <h2>Technical Addendum</h2>
+                <p>
+                    Building this project involved thoughtful technical choices aimed at creating an interactive and visually appealing experience, while keeping the structure clean and responsive. The HTML structure centers around key semantic tags to improve accessibility and maintain a logical flow. I used `<section>` tags to separate the story container, city map, and modal components, keeping each part distinct and easy to navigate. Additionally, `<header>`, `<footer>`, and `<main>` tags provide consistent layout, helping to organize information and functionality.
+                    <br><br>
+                    CSS plays a significant role in setting a cohesive look and feel. I defined color variables to ensure a unified color theme throughout the site and to make styling adjustments easier. Animations and button transitions add engagement and responsiveness, giving users feedback on interactions. The overlay blur effect that appears at each story’s ending was used to highlight the restart button, keeping the user’s focus directed without overwhelming the screen. Media queries ensure the layout adapts smoothly across device sizes, which was important for accessibility and user experience.
+                    <br><br>
+                    JavaScript is essential for handling the story’s branching paths, user choices, and overall interactivity. Each stage of the story is organized into an object, with text, choices, consequences, images, and addendum content—this modular approach makes it easy to add, remove, or change stages as needed. Event listeners and DOM manipulation drive the interactions for user choices, toggling music, and activating mini-games.
+                    <br><br>
+                    I faced a few challenges along the way. Managing audio autoplay in line with browser policies required starting the music only after the user’s first action, which both solved the issue and improved user control. There were also some initial difficulties with event listeners not updating DOM content as expected, particularly with the music toggle and delayed restart button. CSS styling for responsive images and modals required fine-tuning using `flex` and `grid` layouts to ensure a balanced, user-friendly design across different screen sizes.
                 </p>
             </div>
         </div>
