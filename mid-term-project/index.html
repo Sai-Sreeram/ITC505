@@ -13,14 +13,16 @@
     </header>
 
     <main>
+        <!-- Story Container Section -->
         <section id="storyContainer">
             <img id="storyImage" src="assets/1.jpeg" alt="Start image" class="story-image">
             <div id="storyText">Your journey begins...</div>
             <div id="choices" class="choices-grid"></div>
-            <!-- Restart Button -->
+            <!-- Restart Button, initially hidden -->
             <button id="restartButton" style="display: none;" onclick="startGame()">Restart Game</button>
         </section>
 
+        <!-- City Map Section -->
         <section id="cityMap">
             <h2>City Map</h2>
             <div id="mapAreas" class="map-grid">
@@ -31,14 +33,18 @@
             </div>
         </section>
 
+        <!-- Music Toggle and Addendum Buttons -->
         <button id="toggleMusic">🔊 Toggle Music</button>
         <button id="addendumBtn" onclick="toggleAddendum()">📜 Addendum</button>
 
+        <!-- Addendum Modal -->
         <div id="addendumModal" class="modal">
             <div class="modal-content">
                 <span class="close" onclick="toggleAddendum()">&times;</span>
                 <h2>Addendum</h2>
-                <p id="addendumContent">In the beginning, you are tasked with finding the missing AI that controls vital city functions. Choose your actions wisely, as every choice will lead to a different part of the story with unique challenges and opportunities.</p>
+                <p id="addendumContent">
+                    In the beginning, you are tasked with finding the missing AI that controls vital city functions. Choose your actions wisely, as every choice will lead to a different part of the story with unique challenges and opportunities.
+                </p>
             </div>
         </div>
     </main>
@@ -46,6 +52,7 @@
     <!-- Blurred overlay for end screen -->
     <div class="blur-overlay"></div>
 
+    <!-- Footer with last modified script -->
     <footer>
         <p>Last updated: <span id="lastModified"></span></p>
     </footer>
@@ -54,6 +61,7 @@
     <audio id="backgroundMusic" src="assets/background.mp3" loop preload="auto"></audio>
     <audio id="clickSound" src="assets/click.mp3" preload="auto"></audio>
 
+    <!-- JavaScript Files -->
     <script src="script.js"></script>
     <script>
         document.getElementById("lastModified").textContent = document.lastModified;
