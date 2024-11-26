@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mad Lib Generator</title>
     <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
 </head>
 <body>
     <header>
@@ -13,7 +12,8 @@
         <p>Fill in the blanks and create your own story!</p>
     </header>
     <main>
-        <form action="/ITC505/lab-7/" method="POST">
+        <!-- Updated Form -->
+        <form id="madLibForm">
             <div class="form-group">
                 <label for="adjective1">Adjective:</label>
                 <input type="text" id="adjective1" name="adjective1" required>
@@ -40,6 +40,7 @@
     <footer>
         <p>Last updated: <span id="lastModified"></span></p>
     </footer>
+    <script src="script.js"></script>
     <script>
         document.getElementById('lastModified').textContent = document.lastModified;
     </script>
