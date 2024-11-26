@@ -1,13 +1,13 @@
 document.addEventListener("DOMContentLoaded", () => {
   // Select form and output container
-  const form = document.querySelector("form");
+  const form = document.getElementById("madLibForm");
   const outputContainer = document.createElement("div");
   outputContainer.id = "outputContainer";
   form.insertAdjacentElement("afterend", outputContainer);
 
   // Handle form submission
   form.addEventListener("submit", (event) => {
-    event.preventDefault(); // Prevent page reload
+    event.preventDefault(); // Prevent the form from submitting to a server
 
     // Collect input values
     const adjective1 = document.getElementById("adjective1").value;
@@ -18,9 +18,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Create the Mad Lib story
     const story = `
-      Once upon a time, there was a ${adjective1} ${noun} who loved to ${verb1}.
-      Everyone said it was the most ${adjective2} ${noun} they had ever seen.
-      One day, it found itself surrounded by ${pluralNoun}, and an adventure began!
+      Once upon a time, there was a <strong>${adjective1}</strong> <strong>${noun}</strong> who loved to <strong>${verb1}</strong>.
+      Everyone said it was the most <strong>${adjective2}</strong> <strong>${noun}</strong> they had ever seen.
+      One day, it found itself surrounded by <strong>${pluralNoun}</strong>, and an adventure began!
     `;
 
     // Display the story dynamically
