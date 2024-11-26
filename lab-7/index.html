@@ -12,6 +12,7 @@
         <p>Fill in the blanks and create your own story!</p>
     </header>
     <main>
+        <!-- Updated Form -->
         <form id="madLibForm">
             <div class="form-group">
                 <label for="adjective1">Adjective:</label>
@@ -35,15 +36,13 @@
             </div>
             <button type="submit">Generate My Mad Lib</button>
         </form>
-        <section id="outputSection" style="display:none;">
-            <h2>Your Mad Lib Story</h2>
-            <p id="madLibStory"></p>
-            <button id="resetForm">Create Another</button>
-        </section>
     </main>
     <footer>
         <p>Last updated: <span id="lastModified"></span></p>
     </footer>
     <script src="script.js"></script>
+    <script>
+        document.getElementById('lastModified').textContent = document.lastModified;
+    </script>
 </body>
 </html>
