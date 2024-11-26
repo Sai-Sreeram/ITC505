@@ -1,35 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
-  <title>Mad Lib Generator</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mad Lib Generator</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
 </head>
 <body>
-  <div class="container">
-    <h1>Mad Lib Generator</h1>
-    <form id="madlibForm">
-      <label for="noun">Noun:</label>
-      <input type="text" id="noun" name="noun" required>
-
-      <label for="verb">Verb:</label>
-      <input type="text" id="verb" name="verb" required>
-
-      <label for="adjective">Adjective:</label>
-      <input type="text" id="adjective" name="adjective" required>
-
-      <label for="pluralNoun">Plural Noun:</label>
-      <input type="text" id="pluralNoun" name="pluralNoun" required>
-
-      <label for="place">Place:</label>
-      <input type="text" id="place" name="place" required>
-
-      <button type="submit">Generate</button>
-    </form>
-
-    <div id="output" class="output"></div>
-  </div>
-  <script src="script.js"></script>
+    <header>
+        <h1>Mad Lib Generator</h1>
+        <p>Fill in the blanks and create your own story!</p>
+    </header>
+    <main>
+        <form action="/ITC505/lab-7/" method="POST">
+            <div class="form-group">
+                <label for="adjective1">Adjective:</label>
+                <input type="text" id="adjective1" name="adjective1" required>
+            </div>
+            <div class="form-group">
+                <label for="noun">Noun:</label>
+                <input type="text" id="noun" name="noun" required>
+            </div>
+            <div class="form-group">
+                <label for="verb1">Verb:</label>
+                <input type="text" id="verb1" name="verb1" required>
+            </div>
+            <div class="form-group">
+                <label for="adjective2">Another Adjective:</label>
+                <input type="text" id="adjective2" name="adjective2" required>
+            </div>
+            <div class="form-group">
+                <label for="pluralNoun">Plural Noun:</label>
+                <input type="text" id="pluralNoun" name="pluralNoun" required>
+            </div>
+            <button type="submit">Generate My Mad Lib</button>
+        </form>
+    </main>
+    <footer>
+        <p>Last updated: <span id="lastModified"></span></p>
+    </footer>
+    <script>
+        document.getElementById('lastModified').textContent = document.lastModified;
+    </script>
 </body>
 </html>
