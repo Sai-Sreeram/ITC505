@@ -1,0 +1,148 @@
+/* Global Styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    background: #f4f7fb;
+    color: #333333;
+    padding: 20px;
+    margin: 0 auto;
+    max-width: 1000px;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    box-sizing: border-box;
+}
+
+/* Form Styling */
+form {
+    background-color: #ffffff;
+    padding: 40px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+label {
+    font-size: 16px;
+    color: #2c3e50;
+    display: block;
+    margin-bottom: 8px;
+}
+
+/* Input Fields Styling */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="tel"],
+input[type="date"],
+select {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid #ccd0d4;
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: #f9f9f9;
+    margin-bottom: 18px;
+    transition: border-color 0.3s ease;
+    box-sizing: border-box; /* Ensures padding is included in width calculation */
+}
+
+/* Focused Input Styles */
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+input[type="tel"]:focus,
+input[type="date"]:focus,
+select:focus {
+    border-color: #2980b9;
+    background-color: #ffffff;
+    box-shadow: 0 0 5px rgba(41, 128, 185, 0.4);
+}
+
+/* Button Styling */
+button[type="submit"] {
+    background-color: #2980b9;
+    color: #ffffff;
+    padding: 14px 30px;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+}
+
+button[type="submit"]:hover {
+    background-color: #3498db;
+}
+
+/* Error Message Styling */
+.error {
+    color: #e74c3c;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+/* Footer Styling */
+footer {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 14px;
+    color: #7f8c8d;
+}
+
+/* Responsive Design for Tablets and Mobile */
+@media screen and (max-width: 768px) {
+    body {
+        padding: 15px;
+    }
+
+    form {
+        padding: 20px;
+    }
+
+    label {
+        font-size: 14px;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    input[type="tel"],
+    input[type="date"],
+    select {
+        font-size: 14px;
+        padding: 12px;
+    }
+
+    button[type="submit"] {
+        font-size: 16px;
+        padding: 12px 25px;
+    }
+}
+
+/* Additional adjustments for mobile screens */
+@media screen and (max-width: 480px) {
+    form {
+        padding: 15px;
+    }
+
+    label {
+        font-size: 13px;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    input[type="tel"],
+    input[type="date"],
+    select {
+        font-size: 13px;
+        padding: 10px;
+    }
+
+    button[type="submit"] {
+        font-size: 15px;
+        padding: 10px 20px;
+    }
+}
