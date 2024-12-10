@@ -73,10 +73,10 @@ button:hover {
 .board {
     display: grid;
     gap: 10px;
-    justify-content: center; /* Center the tiles horizontally */
-    align-items: center; /* Center the tiles vertically */
-    margin: 30px auto; /* Ensure the board is centered within the container */
-    width: fit-content; /* Ensure the board wraps tightly around the tiles */
+    justify-content: center; /* Centers the board horizontally */
+    align-items: center; /* Centers the tiles within the board */
+    margin: 30px auto; /* Centers the board within the container */
+    width: max-content; /* Ensures the board's width adjusts to the content */
 }
 
 
