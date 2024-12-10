@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lights Out</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Grid Selection Screen -->
+        <div id="grid-selection" class="screen">
+            <h1>Lights Out</h1>
+            <p>Select a grid size to play the game:</p>
+            <div class="grid-selector">
+                <button onclick="startGame(5)">Play 5x5</button>
+                <button onclick="startGame(9)">Play 9x9</button>
+            </div>
+            <div class="footer-buttons">
+                <button onclick="openModal('tutorial')">Tutorial</button>
+                <button onclick="openModal('addendum')">Addendum</button>
+            </div>
+        </div>
+
+        <!-- Game Screen -->
+        <div id="game-screen" class="screen hidden">
+            <h1>Lights Out</h1>
+            <p>Click the tiles to turn off all the lights!</p>
+            <div id="game-board" class="board"></div>
+            <button onclick="resetGame()">Back to Main Menu</button>
+        </div>
+    </div>
+
+    <!-- Modals -->
+    <div id="tutorial-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('tutorial')">&times;</span>
+            <h2>LightsOut Tutorial</h2>
+            <p>LightsOut is a puzzle where you are presented with a grid of cells or lights some of which are dark, while others are light. All of these have to be turned off by clicking on the cells. Each click selects, or ‘toggles’ that cell and each of its immediate adjacent cells.</p>
+            <p>Play our LightsOut now or read on for a method on how to solve these puzzles.</p>
+
+            <h3>How to Solve LightsOut Puzzles</h3>
+            <p>Every LightsOut solution is solvable without the use of the right-mouse button to select a cell twice. This is because clicking on a cell twice is the same as not clicking it at all.</p>
+
+            <h3>Chase The Lights</h3>
+            <p>The easiest way to solve LightsOut puzzles is by using the method referred to as "Chase The Lights." Starting from the second row, go down each row and click on every cell that has a light on in the row above it. Doing so will turn off all the lights in that row. Continue with each consecutive row until only the lights in the last row remain.</p>
+
+            <h3>Pattern Lookup</h3>
+            <p>If only the lights in the last row remain, use the table below to look up the pattern of lights. This will tell you which lights to click in the top row. Follow this method, and the bottom row will also turn dark, solving the puzzle completely.</p>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Clicks Top Row</th>
+                        <th>Lights Bottom Row</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>..***</td><td>...+.</td></tr>
+                    <tr><td>.*.*.</td><td>.+..+</td></tr>
+                    <tr><td>.**.*</td><td>+....</td></tr>
+                    <tr><td>*...*</td><td>...++</td></tr>
+                    <tr><td>*.**.</td><td>....+</td></tr>
+                    <tr><td>**.**</td><td>..+..</td></tr>
+                    <tr><td>***..</td><td>.+...</td></tr>
+                </tbody>
+            </table>
+
+        <h3>Fewest Moves</h3>
+        <p>Although the "Chase The Lights" method is effective, it often results in more moves than necessary. For fewer moves, use the click pattern for the top row and apply it to the original puzzle. This eliminates unnecessary moves and simplifies the process.</p>
+        </div>
+    </div>
+
+    <div id="addendum-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('addendum')">&times;</span>
+            <h2>Addendum</h2>
+            <p>For my final assignment I decided to build it as an interactive and interesting Lights Out game. I wanted to simply make sure the game was functional, visually pleasing, and user friendly, as well as responsive across different grid sizes.</p>
+    
+            <h3>My Process and Choices</h3>
+            <p>So I started off by dynamicaly generated the how grid based on your choice (5×5 & 9×9). The tiles were all created programmatically in JavaScript so the grid could scale seamlessly. A click event listener was added to each tile to switch state and also the state of its neighboring tiles. So I mostly looked into making the toggle logic without making any boundary errors but do behave correctly with neighbor.</p>
+    
+            <p>For a more personalised experience for every game I created a randomization algorithm by simulating valid moves. The result was solvable configurations without explicitly assigning states to tiles and their corresponding reader/writer states.</p>
+    
+            <p>For the design, I chose the dark theme where glowing yellow tiles look like a halogen light illuminated and dark gray tiles meant as off states for better differentiation. I used hover effects and smooth transitions to give the interface a dynamic an engaging feel.</p>
+    
+            <h3>Challenges I Faced</h3>
+            <p>The main difficulty was to produce solvable randomness for the board. To deal with this, I simulated random clicks so that each game would be winnable. I also scratch refined the win condition logic to ensure that all the tiles were 'off' with no performance issues.</p>
+    
+            <h3>Insights and Lessons</h3>
+            <p>In this project I learned the importance of balancing of functionality with user experience. This not only reinforced my skills of DOM manipulation, event handling and creating dynamic content. I also picked up on the art of meticulous styling and responsiveness while making an immersive user experience.</p>
+        </div>
+    </div>    
+
+    <footer>
+        <p>Last updated: <span id="lastModified"></span></p>
+        <script>
+            document.getElementById("lastModified").textContent = document.lastModified;
+        </script>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

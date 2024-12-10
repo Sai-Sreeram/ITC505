@@ -1,0 +1,122 @@
+/* General body styling */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    background-color: #1e1e2f; /* Deep navy blue */
+    color: #ffffff; /* White text */
+}
+
+/* Container */
+.container {
+    margin: 20px auto;
+    max-width: 800px;
+    padding: 30px;
+    background: #2a2a40; /* Slightly lighter navy */
+    border-radius: 16px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.7); /* Modern shadow */
+}
+
+/* Headings */
+h1 {
+    color: #ffcc33; /* Soft yellow for headings */
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+p {
+    color: #bbbbbb; /* Light gray text for subtext */
+    font-size: 1.2rem;
+}
+
+/* Buttons */
+button {
+    margin: 10px;
+    padding: 15px 30px;
+    font-size: 18px;
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #ff9500, #ffcc33); /* Gradient effect */
+    color: #1e1e2f; /* Dark text for contrast */
+    box-shadow: 0 4px 8px rgba(255, 153, 0, 0.6); /* Subtle glow effect */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+button:hover {
+    transform: translateY(-3px); /* Lift on hover */
+    box-shadow: 0 8px 15px rgba(255, 204, 51, 0.8); /* Stronger glow */
+    cursor: pointer;
+}
+
+/* Tiles */
+.tile {
+    width: 70px;
+    height: 70px;
+    border-radius: 12px;
+    background: radial-gradient(circle, #ffea00, #ffd700); /* Glowing yellow */
+    box-shadow: 0 0 15px 5px rgba(255, 234, 0, 0.7); /* Glow effect */
+    transition: background 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+}
+
+.tile.is-off {
+    background: #000000; /* Matte black */
+    box-shadow: none; /* No glow when off */
+}
+
+.tile:hover {
+    transform: scale(1.1); /* Slight zoom on hover */
+    cursor: pointer;
+}
+
+/* Board layout */
+.board {
+    display: grid;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+/* Modals */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 10;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.8); /* Dark overlay */
+    color: #ffffff;
+}
+
+.modal-content {
+    background-color: #2a2a40; /* Same as container */
+    margin: 15% auto;
+    padding: 20px;
+    border-radius: 16px;
+    width: 80%;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.7);
+    text-align: left;
+}
+
+.modal-content h2, .modal-content h3 {
+    color: #ffcc33; /* Match heading color */
+}
+
+.modal-content p {
+    line-height: 1.6;
+}
+
+.close {
+    color: #ffcc33;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: #ffffff;
+    text-decoration: none;
+}
